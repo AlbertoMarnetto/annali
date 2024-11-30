@@ -17,13 +17,23 @@ A small tragedy, for sure. Nobody got directly harmed by the game, unless they t
 
 True to its promise, Stunt Island gives the player the possibility to be both a plane stuntman and a filmmaker. 
 
-As stuntman, one can pilot a plane in 32 dangerous flying scenes, either as individual missions or in the context of a tournament. One can also create new stunts in a sophisticated set design tool. As filmmaker, one can use the same set designer to create any kind of film scene, regardless whether for an action-filled plane movie or a indoor phychological thriller. choose the setting, place cameras, position actors and scenery, use the integrated scripting language to make all entites move and interact. Then head to the post-production room and piece together the footage in a film.
+As stuntman, one can pilot an aircraft plane in 32 dangerous flying scenes, either as individual missions or in the context of a tournament. One can also create new stunts in a sophisticated set design tool. As filmmaker, one can use the same set designer to create any kind of film scene, regardless whether for an action-filled plane movie or a indoor phychological thriller. choose the setting, place cameras, position actors and scenery, use the integrated scripting language to make all entites move and interact. Then head to the post-production room and piece together the footage in a film.
 
 The amount of content provided was great for a game of that era: more than 40 “flyables” (mostly planes, but fancier choices like a pterodactyl), hundreds of various assets, plus the eponymous island, with many square kilometers of low-poly terrain, including various cities, mountains, a dam and several other locations.
+
+<center>
+<img src="/assets/2024-11-15--stunt-island-elegy/si-freeflight.png" alt="drawing" width="640" border="1"/>
+<figcaption>The free-flight mode allowed to try out any aircraft.<br/>Here we fly a 1908's <em>June Bug</em></figcaption>
+</center>
 
 The 3D engine was a marvel, bug-free and very fast even on low-end machines, yet offering rich scenarios and a decent flight model. Sure, other flight simulators of the era has similar features, but most of them were the result of years of iterations. Stunt Island instead was written from scratch, in less than two years, by a tiny team who also had to implement the huge filmmaking part. Stephens & Co. still found the time to add Gouraud shading, a novelty for the time.
 
 This is only a glimpse of what the game had to offer. Other reviews can surely do the game more justice; I recommend [PC Gamer's 2012 retrospective](https://www.pcgamer.com/reinstall-stunt-island/).
+
+<center>
+<img src="/assets/2024-11-15--stunt-island-elegy/si-mission.png" alt="drawing" width="640" border="1"/>
+<figcaption>The tournament mode: daring missions for unlikely movie plots.</figcaption>
+</center>
 
 ### The neglected child
 
@@ -35,7 +45,17 @@ This basically sealed the fate of could have been a promising series. The Nineti
 
 The “content creator” soul of the game had a better destiny that its flight simulation part. After all, Stunt Island was one of the extremely few videogames to allow users to create their own artistic works. Many years before terms like “machinima” and “content creator” entered the vocabulary, the set designer and the scripting language of the game offered a unique opportunity for wannabe filmmakers to transform their ideas into a real video. Disney was also generous enough to provide a freeware video player, so that anyone was free to distribute their videos to their friends or online.
 
-Some fans of the game also formed a club called SIFA (Stunt Island Filmmakers' Association) to share ideas, filming tips and distribute videos. From what I'm able to see, the group was quite active for about a decade, steadily producing videos and experimenting with increasingly sophisticated techniques. They also managed to contact Stephens, who gifted them the asset editor Disney used to create the props. With this tool in hand, a lot more became possible. A tribute to Star Wars (“Truck Wars”) was bound to happen, but many other works were produced, and I'd encourage the reader to check them out on Youtube.
+<center>
+<img src="/assets/2024-11-15--stunt-island-elegy/si-scenario-editor-1.png" alt="drawing" width="640" border="1"/>
+<figcaption>The scenario editor offers more that 1000 assets to setup the scene.<br/>No problem if the screenplay features a windmill floating above a skyscraper.</figcaption>
+</center>
+<br/><br/>
+<center>
+<img src="/assets/2024-11-15--stunt-island-elegy/si-scenario-editor-2.png" alt="drawing" width="640" border="1"/>
+<figcaption>One can also setup automations via a simple scripting interface</figcaption>
+</center>
+
+Some fans of the game also formed a club called SIFA (Stunt Island Filmmakers' Association) to share ideas, filming tips and distribute videos. The group was quite active for about a decade, steadily producing videos and experimenting with increasingly sophisticated techniques. They also managed to contact Stephens, who gifted them the asset editor Disney used to create the props. With this tool in hand, a lot more became possible. A tribute to Star Wars (“[Truck Wars](https://www.youtube.com/watch?v=qVcrY7yPLQI)”) was bound to happen, but many other works were produced, and I'd encourage the reader to check them out on Youtube.
 
 However, even the creative community slowly moved on to other tools, some of its members even graduating to professional filmmaking. The flow of films and support materials seems to dry out around 2000, and the community discussion channels (Yahoo Groups, Geocities) went mostly lost with the shutdown of their hosting channels, as they never migrated to newer platforms.
 
@@ -47,6 +67,11 @@ Stunt Island is still remembered, but it has not (yet?) been blessed by a nostal
 For Stunt Island, the reference sites are two: [Stunt Island Central](https://armknechted.com/sicentral/stunt.html) by Doug Armknecht and [Stund Island Harbor](https://www.planetmic.com/orbit/siharbor.htm) by Mic Healey. I absolutely encourage to reader to pay them a visit. Both curators are collecting materials related to the game, both official files or content produced by the fan community. Mr. Armknecht is also curating a [Youtube channel](https://www.youtube.com/@StuntIslandCentral), which publishes community-made videos and own creations, including a freshly-made full walkthrough of the missions. Yet, the sites are mostly a museum for a game that was: new content is still occasionally produced occasionally, but most updates come from the rediscovery of old material. 
 
 Other well-known retrogaming places do not improve the outlook. GameFAQs has no guide for the game. Jimmy Maher's blog (“The Digital Antiquarian”) does not cover it. The Wikipedia page only offers minimal information. No speedrun is to be found. Aside from the two sites I mentioned, the most valuable modern tribute to the game is probably Fabien Sanglard's interview with Adrian Stephens, offering a wealth of information about the game's making-of and even some technical details about the rendering engine. Nothing comparable to Sanglard's monumental dissections of ID's masterworks, but still a precious glimpse in the machinery running behind the scenes.
+
+<center>
+<img src="/assets/2024-11-15--stunt-island-elegy/si-theatre.png" alt="drawing" width="640" border="1"/>
+<figcaption>The virtual moviegoers of the game were very friendly and would always applaud your work.</figcaption>
+</center>
 
 ### Conclusion
 
