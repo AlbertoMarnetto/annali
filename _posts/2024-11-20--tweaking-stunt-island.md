@@ -20,7 +20,7 @@ I spent a dozen of hours learning the tools of the trade and trying to figure ou
 <a id="comparison"/>
 <div style="margin-bottom:2em; margin-top:2em; ">
 <center>
-<a href="/assets/2024-11-20--tweaking-stunt-island/comparison.html">Click here for the interactive comparison</a>
+<a href="/assets/2024-11-20--tweaking-stunt-island/comparison.html"><b>Click here for the interactive comparison</b></a>
 </center>
 </div>
 
@@ -45,6 +45,8 @@ I spent a dozen of hours learning the tools of the trade and trying to figure ou
 </a>
 <figcaption>Scenario editor, vanilla game (left) and patched (right)</figcaption>
 </center>
+
+For a video comparison, one can check out <a href="https://youtu.be/AZMDm-2IIzc?si=7q4pK-dFhUyMhEyJ"><b>this “remaster” of the movie <em>Michey's Revenge</em></b></a>, courtesy of Doug Armknecht's “Stunt Island Central” channel.
 
 In the following, I'll show the process and some failed tries. Even if this is far from being a professional effort, I hope that publishing this can be of help to other learners, or maybe induce some experts to chime in and suggest improvements (in the name of Cunningham's Law). Tutorials about debugging with DOSBox are rare to find, so I feel that even this small example can be useful.
 
