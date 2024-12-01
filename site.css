@@ -1,6 +1,6 @@
 /* inspired by https://justinjackson.ca/words.html */
 html {
-  max-width: 70ch;
+  max-width: 80ch;
   padding: 0em 1em;
   margin: auto;
   line-height: 1.5;
@@ -35,3 +35,4 @@ html {
 p {
   text-align: justify;
 }
+

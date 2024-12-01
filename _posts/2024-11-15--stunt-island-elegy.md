@@ -15,24 +15,29 @@ A small tragedy, for sure. Nobody got directly harmed by the game, unless they t
 
 ### For those who do not know the game
 
-True to its promise, Stunt Island gives the player the possibility to be both a plane stuntman and a filmmaker. 
-
-As stuntman, one can pilot an aircraft plane in 32 dangerous flying scenes, either as individual missions or in the context of a tournament. One can also create new stunts in a sophisticated set design tool. As filmmaker, one can use the same set designer to create any kind of film scene, regardless whether for an action-filled plane movie or a indoor phychological thriller. choose the setting, place cameras, position actors and scenery, use the integrated scripting language to make all entites move and interact. Then head to the post-production room and piece together the footage in a film.
-
-The amount of content provided was great for a game of that era: more than 40 “flyables” (mostly planes, but fancier choices like a pterodactyl), hundreds of various assets, plus the eponymous island, with many square kilometers of low-poly terrain, including various cities, mountains, a dam and several other locations.
-
 <center>
 <img src="/assets/2024-11-15--stunt-island-elegy/si-freeflight.png" alt="drawing" width="640" border="1"/>
 <figcaption>The free-flight mode allowed to try out any aircraft.<br/>Here we fly a 1908's <em>June Bug</em></figcaption>
 </center>
+
+True to its promise, Stunt Island gives the player the possibility to be both a plane stuntman and a filmmaker. 
+
+As stuntman, one can pilot an aircraft plane in 32 dangerous flying scenes, either as individual missions or in the context of a tournament. One can also create new stunts in a sophisticated set design tool. As filmmaker, one can use the same set designer to create any kind of film scene, regardless whether for an action-filled plane movie or a indoor phychological thriller. choose the setting, place cameras, position actors and scenery, use the integrated scripting language to make all entites move and interact. Then head to the post-production room and piece together the footage in a film.
+
+<center>
+<img src="/assets/2024-11-15--stunt-island-elegy/si-mission.png" alt="drawing" width="640" border="1"/>
+<figcaption>The tournament mode: daring missions for unlikely movie plots.</figcaption>
+</center>
+
+The amount of content provided was great for a game of that era: more than 40 “flyables” (mostly planes, but fancier choices like a pterodactyl), hundreds of various assets, plus the eponymous island, with many square kilometers of low-poly terrain, including various cities, mountains, a dam and several other locations.
 
 The 3D engine was a marvel, bug-free and very fast even on low-end machines, yet offering rich scenarios and a decent flight model. Sure, other flight simulators of the era has similar features, but most of them were the result of years of iterations. Stunt Island instead was written from scratch, in less than two years, by a tiny team who also had to implement the huge filmmaking part. Stephens & Co. still found the time to add Gouraud shading, a novelty for the time.
 
 This is only a glimpse of what the game had to offer. Other reviews can surely do the game more justice; I recommend [PC Gamer's 2012 retrospective](https://www.pcgamer.com/reinstall-stunt-island/).
 
 <center>
-<img src="/assets/2024-11-15--stunt-island-elegy/si-mission.png" alt="drawing" width="640" border="1"/>
-<figcaption>The tournament mode: daring missions for unlikely movie plots.</figcaption>
+<img src="/assets/2024-11-15--stunt-island-elegy/si-handbook.png" alt="drawing" width="640" border="1"/>
+<figcaption>The thick game manual showed the high production value of the game.</figcaption>
 </center>
 
 ### The neglected child
@@ -62,7 +67,7 @@ However, even the creative community slowly moved on to other tools, some of its
 
 ### Stunt Island today
 
-Stunt Island is still remembered, but it has not (yet?) been blessed by a nostalgia-fueled revival. Other games of the era enjoy small but active fan communities, producting a new content at a steady pace: for example, as of November 2024, Broderbund's “Stunts” has a tournament currently running at [zak.stunts.hu], and the original “Prince of Persia” has at least 6 maps released since the start of the year ([www.popot.org]).
+Stunt Island is still remembered, but it has not (yet?) been blessed by a nostalgia-fueled revival. Other games of the era enjoy small but active fan communities, producting a new content at a steady pace: for example, as of November 2024, Broderbund's “Stunts” has a tournament currently running on a dedicated fan site [“Zak Stunts”](zak.stunts.hu), and the original “Prince of Persia” has at least 6 maps released since the start of the year ([www.popot.org]).
 
 For Stunt Island, the reference sites are two: [Stunt Island Central](https://armknechted.com/sicentral/stunt.html) by Doug Armknecht and [Stund Island Harbor](https://www.planetmic.com/orbit/siharbor.htm) by Mic Healey. I absolutely encourage to reader to pay them a visit. Both curators are collecting materials related to the game, both official files or content produced by the fan community. Mr. Armknecht is also curating a [Youtube channel](https://www.youtube.com/@StuntIslandCentral), which publishes community-made videos and own creations, including a freshly-made full walkthrough of the missions. Yet, the sites are mostly a museum for a game that was: new content is still occasionally produced occasionally, but most updates come from the rediscovery of old material. 
 
@@ -70,7 +75,7 @@ Other well-known retrogaming places do not improve the outlook. GameFAQs has no 
 
 <center>
 <img src="/assets/2024-11-15--stunt-island-elegy/si-theatre.png" alt="drawing" width="640" border="1"/>
-<figcaption>The virtual moviegoers of the game were very friendly and would always applaud your work.</figcaption>
+<figcaption>The virtual moviegoers of the game are very friendly and will always applaud your work.</figcaption>
 </center>
 
 ### Conclusion

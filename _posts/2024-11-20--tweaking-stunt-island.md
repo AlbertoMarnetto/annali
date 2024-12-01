@@ -5,7 +5,7 @@ layout: default
 
 ## Tweaking Stunt Island's 30-year-old 3D engine
 
-Note: the patch is available <a href="/assets/2024-11-20--tweaking-stunt-island/si-8x.zip">HERE</a>. This post is about its making-of.
+Note: the patch is available at the end of the article (<b><a href="#download">HERE</a></b>). This post is about its making-of.
 
 ### Intro
 
@@ -17,17 +17,32 @@ Also, I was always fascinated by the art of reverse engineering, and I thought t
 
 I spent a dozen of hours learning the tools of the trade and trying to figure out the puzzle, and I was very happy of my eventual success. After finding and patching the right location in the executable, the engine got some extra horsepower. No extra resolution unfortunately, but many more details, as one can see in the comparisons below.
 
+<a id="comparison"/>
+<div style="margin-bottom:2em; margin-top:2em; ">
 <center>
+<a href="/assets/2024-11-20--tweaking-stunt-island/comparison.html">Click here for the interactive comparison</a>
+</center>
+</div>
+
+<center>
+<a href="/assets/2024-11-20--tweaking-stunt-island/si-flight-1x.png">
 <img src="/assets/2024-11-20--tweaking-stunt-island/si-flight-1x.png" alt="drawing" width="320" border="1"/>
+</a>
+<a href="/assets/2024-11-20--tweaking-stunt-island/si-flight-8x.png">
 <img src="/assets/2024-11-20--tweaking-stunt-island/si-flight-8x.png" alt="drawing" width="320" border="1"/>
+</a>
 <figcaption>Mission 29, vanilla game (left) and patched (right)</figcaption>
 </center>
 
 <br/>
 
 <center>
+<a href="/assets/2024-11-20--tweaking-stunt-island/si-setdesign-1x.png">
 <img src="/assets/2024-11-20--tweaking-stunt-island/si-setdesign-1x.png" alt="drawing" width="320" border="1"/>
+</a>
+<a href="/assets/2024-11-20--tweaking-stunt-island/si-setdesign-8x.png">
 <img src="/assets/2024-11-20--tweaking-stunt-island/si-setdesign-8x.png" alt="drawing" width="320" border="1"/>
+</a>
 <figcaption>Scenario editor, vanilla game (left) and patched (right)</figcaption>
 </center>
 
@@ -45,7 +60,13 @@ Since I have never debugged DOS programs, the first step is to build up the tool
 
 I start by opening the game executable in Ghidra. The first result is underwhelming:
 
-<center><img src="/assets/2024-11-20--tweaking-stunt-island/ghidra-raw.png" alt="drawing" width="800" border="1"/></center>
+<center>
+<a href="/assets/2024-11-20--tweaking-stunt-island/ghidra-raw.png">
+<a href="/assets/2024-11-20--tweaking-stunt-island/ghidra-raw.png">
+<img src="/assets/2024-11-20--tweaking-stunt-island/ghidra-raw.png" alt="drawing" width="800" border="1"/>
+</a>
+</a>
+</center>
 
 Just one function and a lot of non-decompiled bytes, that does not look good. Maybe the decompile process failed?
 
@@ -66,11 +87,19 @@ Seeing the “LZ91” finally clicks for me. This game was probably compressed b
 
 OK, let's decompress the executable and reload it in Ghidra:
 
-<center><img src="/assets/2024-11-20--tweaking-stunt-island/ghidra-si-uncompressed.png" alt="drawing" width="600" border="1"/></center>
+<center>
+<a href="/assets/2024-11-20--tweaking-stunt-island/ghidra-si-uncompressed.png">
+<img src="/assets/2024-11-20--tweaking-stunt-island/ghidra-si-uncompressed.png" alt="drawing" width="600" border="1"/>
+</a>
+</center>
 
 Looks better. Can we make any sense of the functions?
 
-<center><img src="/assets/2024-11-20--tweaking-stunt-island/ghidra-complex.png" alt="drawing" width="600" border="1"/></center>
+<center>
+<a href="/assets/2024-11-20--tweaking-stunt-island/ghidra-complex.png">
+<img src="/assets/2024-11-20--tweaking-stunt-island/ghidra-complex.png" alt="drawing" width="600" border="1"/>
+</a>
+</center>
 
 Nope, this is over my paygrade. But we are in 2024, maybe we can seek the help of a LLM? Copilot says:
 
@@ -85,19 +114,27 @@ This looks like assembly code mixed with some higher-level C code constructs, de
 </blockquote>
 </small></div>
 
-Not really useful. Thanks all the same, AI. See you in some years. Let's go back to carbon-based intelligence.
+Oh, I see, “the code calls other functions which perform some specific tasks”. Awesome. Thanks all the same, AI. See you in some years, and let's rely on carbon-based intelligence in the meanwhile.
 
 ### A matter of detail
 
-The static analysis did not yield any result yet, but I have another idea. Stunt Island has a “Detail” setting: 
+The static analysis has not yielded any result yet, but I have another idea. Stunt Island has a “Detail” setting: 
 
-<center><img src="/assets/2024-11-20--tweaking-stunt-island/si-detail.png" alt="drawing" width="640" border="1"/></center>
+<center>
+<a href="/assets/2024-11-20--tweaking-stunt-island/si-detail.png">
+<img src="/assets/2024-11-20--tweaking-stunt-island/si-detail.png" alt="drawing" width="640" border="1"/>
+</a>
+</center>
 
 My hope is to find out where the detail level (here, 75%) is stored in the memory, and to change it to 255, or to see how it is use in the rendering process.
 
 Let's fire up Dosbox debug. The best manual for the interface is [a thread on the Vogons forum](https://www.vogons.org/viewtopic.php?t=3944). 
 
-<center><img src="/assets/2024-11-20--tweaking-stunt-island/dosbox-debug.png" alt="drawing" width="600"/></center>
+<center>
+<a href="/assets/2024-11-20--tweaking-stunt-island/dosbox-debug.png">
+<img src="/assets/2024-11-20--tweaking-stunt-island/dosbox-debug.png" alt="drawing" width="600"/>
+</a>
+</center>
 
 The GUI is nice, even I miss the amenities of modern debugging, especially the function names. However, credit is due to the authors: they put in nice features like a branch predictor that shows whether a jump instruction will be taken, and in which direction (back or forward), assuming that the current status of registries and memory stays the same.
 
@@ -128,23 +165,39 @@ $ hexdump -C GAME.VAR
 00000023
 ```
 
-So the detail level is in the very first two bytes. Unluckily, it seems already to be scaled, with 100% = 0xffff. No chance to simply set it higher. But let's not lose hope so soon: we have now more information to find out where in the memory this value is stored, and maybe we can change something else in the 3D computations.
+So the detail level is in the very first two bytes. Unluckily, it seems already to be scaled, with 100% = `0xffff`. No chance to simply set it higher. But let's not lose hope so soon: we have now more information to find out where in the memory this value is stored, and maybe we can change something else in the 3D computations.
 
 I need a breakpoint when `GAME.SAV` is written. According to an [old but practical](https://mrszeto.net/CIT/interrupts.htm) guide to the interrupt table, a file write is triggered by calling interrupt `21h` with `40h` in registry `AH`. Dosbox can set a breakpoint on precisely this event:
 
-<center><img src="/assets/2024-11-20--tweaking-stunt-island/si-bpint-21-40.png" alt="drawing" width="800"/></center>
+<center>
+<a href="/assets/2024-11-20--tweaking-stunt-island/si-bpint-21-40.png">
+<img src="/assets/2024-11-20--tweaking-stunt-island/si-bpint-21-40.png" alt="drawing" width="800"/>
+</a>
+</center>
 
 I change the detail level, close the preferences window and, bingo! Breakpoint triggered.
 
-<center><img src="/assets/2024-11-20--tweaking-stunt-island/si-config-save.png" alt="drawing" width="800"/></center>
+<center>
+<a href="/assets/2024-11-20--tweaking-stunt-island/si-config-save.png">
+<img src="/assets/2024-11-20--tweaking-stunt-island/si-config-save.png" alt="drawing" width="800"/>
+</a>
+</center>
 
 The bytes to write are in `DS:DX`, so `1628:2FEA`. Let's have a look:
 
-<center><img src="/assets/2024-11-20--tweaking-stunt-island/si-2fea.png" alt="drawing" width="800"/></center>
+<center>
+<a href="/assets/2024-11-20--tweaking-stunt-island/si-2fea.png">
+<img src="/assets/2024-11-20--tweaking-stunt-island/si-2fea.png" alt="drawing" width="800"/>
+</a>
+</center>
 
 Yes, the 16-bit value at that address matches the detail level I set (`0x3d70/0xffff ~= 0.24`). I bet that this is a global variable and will stay there for the whole duration of the program, what I verify by starting a mission:
 
-<center><img src="/assets/2024-11-20--tweaking-stunt-island/si-detail-global.png" alt="drawing" width="800"/></center>
+<center>
+<a href="/assets/2024-11-20--tweaking-stunt-island/si-detail-global.png">
+<img src="/assets/2024-11-20--tweaking-stunt-island/si-detail-global.png" alt="drawing" width="800"/>
+</a>
+</center>
 
 The value is still there. Very nice.
 
@@ -152,7 +205,11 @@ The value is still there. Very nice.
 
 Now I have to see where this variable is used. Let's go back to Ghidra, and look for the low two bytes.
 
-<center><img src="/assets/2024-11-20--tweaking-stunt-island/ghidra-2fea.png" alt="drawing" width="800"/></center>
+<center>
+<a href="/assets/2024-11-20--tweaking-stunt-island/ghidra-2fea.png">
+<img src="/assets/2024-11-20--tweaking-stunt-island/ghidra-2fea.png" alt="drawing" width="800"/>
+</a>
+</center>
 
 I am lucky, not too many occurences.
 
@@ -180,11 +237,19 @@ So, the variable at `DS:91EA` get multiplied by the detail level, and then writt
 
 I look for `f2 91` in Ghidra: it only yields two occurrences. One is the fragment we just analyzed, the other is in the middle of some bytes that Ghidra did not decompile automatically. 
 
-<center><img src="/assets/2024-11-20--tweaking-stunt-island/ghidra-91f2.png" alt="drawing" width="800"/></center>
+<center>
+<a href="/assets/2024-11-20--tweaking-stunt-island/ghidra-91f2.png">
+<img src="/assets/2024-11-20--tweaking-stunt-island/ghidra-91f2.png" alt="drawing" width="800"/>
+</a>
+</center>
 
 Well, there is no other place to look, so I ask Ghidra to decompile this section. Some attempts later, a plausible assembly appears:
 
-<center><img src="/assets/2024-11-20--tweaking-stunt-island/ghidra-91f2-found.png" alt="drawing" width="800"/></center>
+<center>
+<a href="/assets/2024-11-20--tweaking-stunt-island/ghidra-91f2-found.png">
+<img src="/assets/2024-11-20--tweaking-stunt-island/ghidra-91f2-found.png" alt="drawing" width="800"/>
+</a>
+</center>
 
 I ensure that the decompilation is right by setting a breakpoint at the start of the fragment (`BP CS:76E8`), and for added safety I verify that the program counter (`EIP`) really points to the locations shown in the listing. This code gets executed many, many times per frame – have I finally reached the goal?
 
@@ -192,19 +257,31 @@ I ensure that the decompilation is right by setting a breakpoint at the start of
 
 Let's try to understand the code: first it decrements `AX` and executes what follows only if it's still positive. Not sure what this means but some live debugging shows that the condition is met quite often anyway. The following calculation is easier to understand: in the x86 architecture, calling `MUL` multiplies `AX` by the operand, leaving the  result in `DX:AX`. With maximum detail, we know that `DS:91F2` will be set at `0xFFFD`, so that the multiplication becomes almost a 16-bit left shift, setting `DX` to `(AX_old - 1)`. The lower the detail, the lower `DX` will be. Then the code executes the following branch only if `CX <= DX + BX`, otherwise it gets skipped.
 
-We know from Sanglard's interview that each 3D entity in the game is represented as a tree, and the engine decides whether to render the (coarser) top nodes or the (finer) lower levels according to their distance from the observer. And we see here that a subroutine gets executed if `CX` is under a certain threshold, which gets bigger the bigger is the detail level. Let's make the bold hypothesis that `CX` is the object distance, and `(DX + BX)` determines the distance threshold under which a higher-resolution model gets loaded.
+In an [interview by Fabien Sanglard](https://fabiensanglard.net/stunt_island/), Stunt Island's main programmer Adrian Stephens revealed an important aspect of the rendering engine: each 3D entity in the game is represented as a tree, and the game decides whether to render the (coarser) top nodes or the (finer) lower levels according to their distance from the observer. And we see here that a subroutine gets executed if `CX` is under a certain threshold, which gets bigger the bigger is the detail level. Let's make the bold hypothesis that `CX` is the object distance, and `(DX + BX)` determines the distance threshold under which a higher-resolution model gets loaded.
 
 I can test the hypothesis by overwriting the calculation with new code. Let's start by setting the threshold to zero. Ghidra shows which bytes to insert:
 
-<center><img src="/assets/2024-11-20--tweaking-stunt-island/ghidra-patch.png" alt="drawing" width="800"/></center>
+<center>
+<a href="/assets/2024-11-20--tweaking-stunt-island/ghidra-patch.png">
+<img src="/assets/2024-11-20--tweaking-stunt-island/ghidra-patch.png" alt="drawing" width="800"/>
+</a>
+</center>
 
 I can do that in the live program: 
 
-<center><img src="/assets/2024-11-20--tweaking-stunt-island/dd-patch-live.png" alt="drawing" width="800"/></center>
+<center>
+<a href="/assets/2024-11-20--tweaking-stunt-island/dd-patch-live.png">
+<img src="/assets/2024-11-20--tweaking-stunt-island/dd-patch-live.png" alt="drawing" width="800"/>
+</a>
+</center>
 
 The experiment works perfectly: all details disappear, Jackson City is reduced to flatland.
 
-<center><img src="/assets/2024-11-20--tweaking-stunt-island/flatland.png" alt="drawing" width="640"/></center>
+<center>
+<a href="/assets/2024-11-20--tweaking-stunt-island/flatland.png">
+<img src="/assets/2024-11-20--tweaking-stunt-island/flatland.png" alt="drawing" width="640"/>
+</a>
+</center>
 
 But what I want is the contrary: changing the code so that the max resolution gets used for all objects. Let's just set the threshold to the max:
 
@@ -222,11 +299,19 @@ SM cs:76f4 c7 c2 ff 4f 66 90
 
 And here we are: Stunt Island in the best detail you'll ever get in a 320x200 window! Pity that the system is still just barely responsive: even with DOSBox's CPU set to max performance, I cannot control my plane, and this is the best screenshot I am able to take before crashing.
 
-<center><img src="/assets/2024-11-20--tweaking-stunt-island/sr71-high-detail.png" alt="drawing" width="640"/></center>
+<center>
+<a href="/assets/2024-11-20--tweaking-stunt-island/sr71-high-detail.png">
+<img src="/assets/2024-11-20--tweaking-stunt-island/sr71-high-detail.png" alt="drawing" width="640"/>
+</a>
+</center>
 
 But there is a better way to go sightseeing: the rendering routine is shared across flight sim, video player and set designer, and at least in the last mode I can take all the time I need to steer the camera. It takes some minutes to push the extremely sluggish control, but after a while I can frame Jackson City and surroundings, looking more gorgeous than ever!
 
-<center><img src="/assets/2024-11-20--tweaking-stunt-island/set-des-high-detail.png" alt="drawing" width="640"/></center>
+<center>
+<a href="/assets/2024-11-20--tweaking-stunt-island/set-des-high-detail.png">
+<img src="/assets/2024-11-20--tweaking-stunt-island/set-des-high-detail.png" alt="drawing" width="640"/>
+</a>
+</center>
 
 Now that I explored the limits, it's time to turn back the dial and find some compromise to make the game playable. The current patch is brutal, it just uses a fixed threshold ignoring the original value in `DX`. We know that `DX` is approximately `AX_old * (detail_level/100)`, maxing out at `AX_old - 1` if the detail level is 100%. What about putting a multiple of `AX` there? The space is limited, only 6 bytes, but a bitshift is compact enough. After some experiments, I settle on
 
@@ -244,7 +329,11 @@ SM cs:76f4 89 c2 c1 e2 03 90
 
 And everything goes as hoped: the quality is great and the game (after cranking up Dosbox's CPU to the max) runs quite fluidly. Time to celebrate!
 
-<center><img src="/assets/2024-11-20--tweaking-stunt-island/final-quality.png" alt="drawing" width="640"/></center>
+<center>
+<a href="/assets/2024-11-20--tweaking-stunt-island/final-quality.png">
+<img src="/assets/2024-11-20--tweaking-stunt-island/final-quality.png" alt="drawing" width="640"/>
+</a>
+</center>
 
 By the way, the fact that the three most significant bits of `DX` are discarded does not seem to lead to any noticeable glitch; I could add some code checking for overflow and saturating the value, but this would require more bytes than I am replacing. I might create the algorithm elsewhere and then `JMP` to it, but at the price of making the code slower and the patching process more difficult. The current version is simple and good enough for me, and after all one must leave some fun to future tinkerers.
 
@@ -256,11 +345,19 @@ First, I need to edit the executables to avoid having to live-patch the code eve
 
 Fortunately, the rendering code is the same in all three executables. However, the detail variable is stored at different addresses, so the assembly is not the same. The easiest way to find the relevant location is to search for the instructions that follow the `MUL` (so the `ADD / CMP / JG` sequence): they only refer to register values, so their encoding (`03 D3 3B CA 7F 1B`) is the same in all the files to patch.
 
-<center><img src="/assets/2024-11-20--tweaking-stunt-island/bless-search.png" alt="drawing" width="600"/></center>
+<center>
+<a href="/assets/2024-11-20--tweaking-stunt-island/bless-search.png">
+<img src="/assets/2024-11-20--tweaking-stunt-island/bless-search.png" alt="drawing" width="600"/>
+</a>
+</center>
 
 Then, we move four bytes back, and we replace the “multiply by the detail level” segment (`F7 26 XX XX 03 D3`) with the “multiply by 8” code (`89 C2 C1 E2 03 90`).
 
-<center><img src="/assets/2024-11-20--tweaking-stunt-island/bless-replace.png" alt="drawing" width="600"/></center>
+<center>
+<a href="/assets/2024-11-20--tweaking-stunt-island/bless-replace.png">
+<img src="/assets/2024-11-20--tweaking-stunt-island/bless-replace.png" alt="drawing" width="600"/>
+</a>
+</center>
 
 The operation works well on all three executables. The patched `PLAYONE` can only play films created by the patched `MAKEONE`, but this seems reasonable. I guess that the films created by the vanilla `MAKEONE` are missing the high-polygon versions of the far objects.
 
@@ -270,7 +367,11 @@ Finally, I am informed that Disney released a patch (“#3”) containing some f
 
 So, here the best Stunt Island one can have, with the enhanced rendering engine and the quality-of-life improvements of Disney's patch:
 
-<center><img src="/assets/2024-11-20--tweaking-stunt-island/final.png" alt="drawing" width="640"/></center>
+<center>
+<a href="/assets/2024-11-20--tweaking-stunt-island/final.png">
+<img src="/assets/2024-11-20--tweaking-stunt-island/final.png" alt="drawing" width="640"/>
+</a>
+</center>
 
 ### Want to try it out?
 
@@ -278,7 +379,10 @@ To play the “definitive” version of Stunt Island, three steps are needed:
 
 * Get the original game, e.g. on [GOG](https://www.gog.com/en/game/stunt_island) or [Steam](https://store.steampowered.com/app/602970/Stunt_Island/)
 * (Optionally) download the “#3” patch from [Stunt Island Central](https://armknechted.com/sicentral/sifiles/index.html), copy it in the game directory, and run the executable in Dosbox
-* Download the “8x” patch from <a href="/assets/2024-11-20--tweaking-stunt-island/si-8x.zip">here</a>, copy it in the game directory, and run the Windows or Linux executable (doing it for DOS would have taken longer)
+* Download the “8x” patch, copy it in the game directory, and run the Windows or Linux executable (doing it for DOS would have taken longer)
 
-Have fun!
+<a id="download"/>
+Downloads:
+* <b><a href="/assets/2024-11-20--tweaking-stunt-island/si-8x.zip">PATCH</a></b> in zip format (recommended)
+* <b><a href="/assets/2024-11-20--tweaking-stunt-island/si-8x.7z">PATCH</a></b> in 7z format, password-protected, password = `stunt-island` (use in case your browser blocks the download of the zip version)
 
