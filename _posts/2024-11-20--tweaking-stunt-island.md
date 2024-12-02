@@ -1,9 +1,9 @@
 ---
-title: Disassembling Stunt Island
+title: "800% Detail: Tweaking Stunt Island's 30-year-old 3D engine"
 layout: default
 ---
 
-## Tweaking Stunt Island's 30-year-old 3D engine
+## 800% Detail: Tweaking Stunt Island's 30-year-old 3D Engine
 
 Note: the patch is available at the end of the article (<b><a href="#download">HERE</a></b>). This post is about its making-of.
 
@@ -46,7 +46,7 @@ I spent a dozen of hours learning the tools of the trade and trying to figure ou
 <figcaption>Scenario editor, vanilla game (left) and patched (right)</figcaption>
 </center>
 
-For a video comparison, one can check out <a href="https://youtu.be/AZMDm-2IIzc?si=7q4pK-dFhUyMhEyJ"><b>this “remaster” of the movie <em>Michey's Revenge</em></b></a>, courtesy of Doug Armknecht's “Stunt Island Central” channel.
+For a video comparison, one can check out <a href="https://youtu.be/AZMDm-2IIzc?si=7q4pK-dFhUyMhEyJ"><b>this “remaster” of the movie <em>Mickey's Revenge</em></b></a>, courtesy of Doug Armknecht's “Stunt Island Central” channel.
 
 In the following, I'll show the process and some failed tries. Even if this is far from being a professional effort, I hope that publishing this can be of help to other learners, or maybe induce some experts to chime in and suggest improvements (in the name of Cunningham's Law). Tutorials about debugging with DOSBox are rare to find, so I feel that even this small example can be useful.
 
@@ -128,7 +128,7 @@ The static analysis has not yielded any result yet, but I have another idea. Stu
 </a>
 </center>
 
-My hope is to find out where the detail level (here, 75%) is stored in the memory, and to change it to 255, or to see how it is use in the rendering process.
+My hope is to find out where the detail level (here, 75%) is stored in the memory, and to change it to 255, or to see how it is used in the rendering process.
 
 Let's fire up Dosbox debug. The best manual for the interface is [a thread on the Vogons forum](https://www.vogons.org/viewtopic.php?t=3944). 
 
@@ -138,7 +138,7 @@ Let's fire up Dosbox debug. The best manual for the interface is [a thread on th
 </a>
 </center>
 
-The GUI is nice, even I miss the amenities of modern debugging, especially the function names. However, credit is due to the authors: they put in nice features like a branch predictor that shows whether a jump instruction will be taken, and in which direction (back or forward), assuming that the current status of registries and memory stays the same.
+The GUI is nice, even if I miss the amenities of modern debugging, especially the function names. However, credit is due to the authors: they put in nice features like a branch predictor that shows whether a jump instruction will be taken, and in which direction (back or forward), assuming that the current status of registries and memory stays the same.
 
 How to find the location of the detail level variable? I navigate again to the “Preferences” screen and spend a lot of time there, trying to devise a method to extract such information. My list of failed attempts includes:
 * Break on keyboard input: I set a breakpoint on keypress (`BPINT 16`) and press “Return” with the mouse pointing on the “plus” sign. The program breaks in a input-reading routine, but stepping through the code I lose my way before being able to understand what the program is doing. Considering I could be in the middle of a complex UI-drawing routine, I give up.
@@ -365,7 +365,7 @@ The operation works well on all three executables. The patched `PLAYONE` can onl
 
 Second, I must create a patching program that can upgrade the game without embedding Disney's code. It would be nice to just implement it as simple search and replace for the six bytes that need to be overwriten, but unfortunately there is the problem of the LZ compression. I cannot bundle `unlzexe`, whose copyright status is unclear, so I end up recompressing the patched executable and diffing it with the unpatched version. The compression smears my 3-byte change all over the file creating a big diff, but this seems to me the least worst method. The patcher then applies the diff to the original game file, which must be provided by the user. This should put the patch on the safe side, copyright-wise.
 
-Finally, I am informed that Disney released a patch (“#3”) containing some features like an alternative beginner-friendly flight model. It would be good if the 800% mod als worked on this version. Luckily the renderer was not changed so the same patching method can be used. The only surprise happens when uncompressing the new `.EXE`: it turns that the compression method was slightly changed (from LZ091 to LZ091E), and `unlzexe` does not recognize the format. However, the algorithm is the same, just the magic number used for the format identification has changed. Commenting out the magic number check in the source code of `unlzexe` solves the problem: I can uncompress the file and create a patch using the same process of the original game.
+Finally, I am informed that Disney released a patch (“#3”) containing some features like an alternative beginner-friendly flight model. It would be good if the 800% mod also worked on this version. Luckily the renderer was not changed so the same patching method can be used. The only surprise happens when uncompressing the new `.EXE`: it turns that the compression method was slightly changed (from LZ091 to LZ091E), and `unlzexe` does not recognize the format. However, the algorithm is the same, just the magic number used for the format identification has changed. Commenting out the magic number check in the source code of `unlzexe` solves the problem: I can uncompress the file and create a patch using the same process of the original game.
 
 So, here the best Stunt Island one can have, with the enhanced rendering engine and the quality-of-life improvements of Disney's patch:
 
