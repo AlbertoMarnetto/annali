@@ -1,0 +1,5 @@
+[[redirects]]
+from = "/*"
+to = "https://fe9aefb4.annali-af6.pages.dev/:splat"
+status = 302
+
