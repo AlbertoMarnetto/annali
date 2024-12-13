@@ -1,5 +1,5 @@
 [[redirects]]
 from = "/*"
-to = "https://annali-af6.pages.dev/:splat"
-status = 302
+to = "https://marnetto.net/:splat"
+status = 301
 

@@ -11,8 +11,8 @@ layout: default
 
 ## Posts
 
-2024-11-28 : [Tweaking Stunt Island’s 30-year-old 3D engine](https://annali-af6.pages.dev/2024/11/20/tweaking-stunt-island) <br/>
-2024-11-15 : [An Elegy to Stunt Island](https://annali-af6.pages.dev/2024/11/15/stunt-island-elegy)
+2024-11-28 : [Tweaking Stunt Island’s 30-year-old 3D engine](https://marnetto.net/2024/11/20/tweaking-stunt-island) <br/>
+2024-11-15 : [An Elegy to Stunt Island](https://marnetto.net/2024/11/15/stunt-island-elegy)
 
 ## Other projects
 
