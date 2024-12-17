@@ -7,7 +7,8 @@ layout: default
 
 * E-mail: [alberto.m.dev@gmail.com](mailto:alberto.m.dev@gmail.com)
 * Linkedin: [linkedin.com/in/a-marnetto](https://linkedin.com/in/a-marnetto)
-* [Resume](assets/index/cv-alberto-marnetto.pdf)
+* Github: [github.com/AlbertoMarnetto/](https://github.com/AlbertoMarnetto/)
+* [Résumé](assets/index/cv-alberto-marnetto.pdf)
 
 ## Posts
 

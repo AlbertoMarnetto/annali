@@ -384,6 +384,8 @@ To play the “definitive” version of Stunt Island, three steps are needed:
 * Download the “8x” patch, copy it in the game directory, and run the Windows or Linux executable (doing it for DOS would have taken longer)
 
 <a id="download"/>
-Downloads:
+Download:
 * <b><a href="/assets/2024-11-20--tweaking-stunt-island/si-8x.7z">PATCH</a></b> in 7z format, password-protected, password = `stunt-island`
+
+<b>Note:</b> some antivirus software will incorrectly flag `si-8x.exe` as malware. It is a false positive – I would not put my name under a virus, after all. You can also examine the patch's [source code](https://github.com/AlbertoMarnetto/si-8x) and build it on your machine.
 
