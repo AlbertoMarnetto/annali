@@ -385,6 +385,5 @@ To play the “definitive” version of Stunt Island, three steps are needed:
 
 <a id="download"/>
 Downloads:
-* <b><a href="/assets/2024-11-20--tweaking-stunt-island/si-8x.zip">PATCH</a></b> in zip format (recommended)
-* <b><a href="/assets/2024-11-20--tweaking-stunt-island/si-8x.7z">PATCH</a></b> in 7z format, password-protected, password = `stunt-island` (use in case your browser blocks the download of the zip version)
+* <b><a href="/assets/2024-11-20--tweaking-stunt-island/si-8x.7z">PATCH</a></b> in 7z format, password-protected, password = `stunt-island`
 
