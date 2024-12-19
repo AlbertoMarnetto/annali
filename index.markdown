@@ -1,6 +1,6 @@
 ---
 title: Alberto's Notebook
-layout: default
+layout: default-nocomments
 ---
 
 ## About me
