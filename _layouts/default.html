@@ -7,6 +7,10 @@
 	<!-- fonts -->
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=ABeeZee">
 
+	<!-- https://stackoverflow.com/a/50081693 -->
+	{% if page.keywords %}
+	<meta name="keywords" content="{{ page.keywords | join: ', ' | escape }}">
+	{% endif %}
   </head>
   <body>
 	  <p class="title"><a href="/index.html">Annali da Samarcanda</a></p>
