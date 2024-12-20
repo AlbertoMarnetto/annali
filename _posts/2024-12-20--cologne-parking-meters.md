@@ -1,15 +1,18 @@
 ---
-title: The Big Map of Cologne Parking Meters / Die große Karte der Parkautomaten in Köln
+title: The Big Map of Cologne Parking Meters / Die große Karte der Parkscheinautomaten in Köln
 layout: default
 keywords:
   - cologne
   - köln
   - parking meters
   - parkautomat
+  - parkautomaten
   - parkscheinautomat
+  - parkscheinautomaten
+  - map
 ---
 
-## The Big Map of Cologne Parking Meters<br/> Die große Karte der Kölner Parkautomaten
+## The Big Map of Cologne Parking Meters<br/> Die große Karte der Kölner Parkscheinautomaten
 
 <center>
 <a href="/assets/2024-12-20--cologne-parking-meters/final.jpg">
