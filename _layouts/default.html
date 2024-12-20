@@ -11,6 +11,9 @@
 	{% if page.keywords %}
 	<meta name="keywords" content="{{ page.keywords | join: ', ' | escape }}">
 	{% endif %}
+
+    <!-- https://gist.github.com/bennylope/1894706 -->
+    <link rel="canonical" href="https://marnetto.net{{ page.url | replace:'index.html','' }}" />
   </head>
   <body>
 	  <p class="title"><a href="/index.html">Annali da Samarcanda</a></p>
