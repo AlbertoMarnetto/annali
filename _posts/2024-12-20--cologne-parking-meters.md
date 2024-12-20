@@ -54,11 +54,11 @@ The dataset lists all the geographical coordinates of the parking meters. Now we
 
 If we want a full map and more flexibility, we need to do things properly:
 
-* download a static map of the city (an map where the coordinates of the corners are known)
+* download a static map of the city (a map where the coordinates of the corners are known)
 * convert the parking meter coordinates into X-Y coords in the image
 * plot them on the map
 
-For the first part, static maps can be found in many places. Google has [Maps Static API](https://developers.google.com/maps/documentation/maps-static/overview) and Mirosoft has [Bing Maps](https://learn.microsoft.com/en-us/bingmaps/articles/geospatial-endpoint-service). However it is easier, and safer from the legal point of view, to use OpenStreetMap (OSM). There are [lots of options](https://wiki.openstreetmap.org/wiki/Static_map_images) to get static maps from the OSM database, I go with [GeoApify](https://www.geoapify.com/).
+For the first part, static maps can be found in many places. Google has [Maps Static API](https://developers.google.com/maps/documentation/maps-static/overview) and Microsoft has [Bing Maps](https://learn.microsoft.com/en-us/bingmaps/articles/geospatial-endpoint-service). However it is easier, and safer from the legal point of view, to use OpenStreetMap (OSM). There are [lots of options](https://wiki.openstreetmap.org/wiki/Static_map_images) to get static maps from the OSM database, I go with [GeoApify](https://www.geoapify.com/).
 
 The URL to get a static map is relatively straightforward:
 
@@ -71,7 +71,7 @@ https://maps.geoapify.com/v1/staticmap?style=osm-bright&width={map_pixel_size[0]
 Getting suitable sizes and zoom needs some attempts. GeoApify does not crop the requested map size to a max value (Bing supports 2000x1500 max), but it seems to timeout if the values are too big. At the end, I resort to download nine maps with 2200x1800 resolution in a 3x3 matrix, and collate them. The resulting image is 6600x5400, which is enough to cover almost the whole city of Cologne at my desired zoom size.
 
 
-Converting the coordinates is not hard, one just need to have a couple of formulas at hand. The first one is documented on [StackExchange](http://gis.stackexchange.com/a/127949/93220) and [Bing Maps](https://docs.microsoft.com/en-us/bingmaps/articles/understanding-scale-and-resolution), the others are basic geometry and algebra:
+Converting the coordinates is not hard, one just needs to have a couple of formulas at hand. The first one is documented on [StackExchange](http://gis.stackexchange.com/a/127949/93220) and [Bing Maps](https://docs.microsoft.com/en-us/bingmaps/articles/understanding-scale-and-resolution), the others are basic geometry and algebra:
 
 ```
 meter_per_pixel = 1. / 2 * 156543.03392 * cos(latitude_in_deg * pi / 180) / (2**(zoom))
@@ -97,7 +97,7 @@ $ cat psa_offene_daten_2023.csv | awk -F';' '{ print $8 }' | sort | uniq | wc -l
 <img src="/assets/2024-12-20--cologne-parking-meters/strange-times.png" alt="drawing" width="640" border="1"/>
 </a>
 <figcaption style="max-width: 75ch; font-size:smaller">I am sure that they had a good reason to set these times, but good luck remembering them.<br/>
-Also, notice now the file still uses the Winsows-1252 encoding instead of Unicode. I could set a legacy encoding and display the umlauts correctly, but I refuse to do so in 2024.
+Also, notice now the file still uses the Windows-1252 encoding instead of Unicode. I could set a legacy encoding and display the umlauts correctly, but I refuse to do so in 2024.
 </figcaption>
 </center>
 
