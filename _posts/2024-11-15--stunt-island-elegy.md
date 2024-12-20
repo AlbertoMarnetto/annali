@@ -17,7 +17,7 @@ A small tragedy, for sure. Nobody got directly harmed by the game, unless they t
 
 <center>
 <a href="/assets/2024-11-15--stunt-island-elegy/si-freeflight.png">
-<img src="/assets/2024-11-15--stunt-island-elegy/si-freeflight.png" alt="drawing" width="640" border="1"/>
+<img src="/assets/2024-11-15--stunt-island-elegy/si-freeflight.png" alt="drawing" width="640"/>
 </a>
 <figcaption>The free-flight mode allowed to try out any aircraft.<br/>Here we fly a 1908's <em>June Bug</em></figcaption>
 </center>
@@ -28,7 +28,7 @@ As stuntman, one can pilot an aircraft plane in 32 dangerous flying scenes, eith
 
 <center>
 <a href="/assets/2024-11-15--stunt-island-elegy/si-mission.png">
-<img src="/assets/2024-11-15--stunt-island-elegy/si-mission.png" alt="drawing" width="640" border="1"/>
+<img src="/assets/2024-11-15--stunt-island-elegy/si-mission.png" alt="drawing" width="640"/>
 </a>
 <figcaption>The tournament mode: daring missions for unlikely movie plots.</figcaption>
 </center>
@@ -41,7 +41,7 @@ This is only a glimpse of what the game had to offer. Other reviews can surely d
 
 <center>
 <a href="/assets/2024-11-15--stunt-island-elegy/si-handbook.png">
-<img src="/assets/2024-11-15--stunt-island-elegy/si-handbook.png" alt="drawing" width="640" border="1"/>
+<img src="/assets/2024-11-15--stunt-island-elegy/si-handbook.png" alt="drawing" width="640"/>
 </a>
 <figcaption>The thick game manual showed the high production value of the game.</figcaption>
 </center>
@@ -58,14 +58,14 @@ The “content creator” soul of the game had a better destiny that its flight 
 
 <center>
 <a href="/assets/2024-11-15--stunt-island-elegy/si-scenario-editor-1.png">
-<img src="/assets/2024-11-15--stunt-island-elegy/si-scenario-editor-1.png" alt="drawing" width="640" border="1"/>
+<img src="/assets/2024-11-15--stunt-island-elegy/si-scenario-editor-1.png" alt="drawing" width="640"/>
 </a>
 <figcaption>The scenario editor offers more that 1000 assets to setup the scene.<br/>No problem if the screenplay features a windmill floating above a skyscraper.</figcaption>
 </center>
 <br/><br/>
 <center>
 <a href="/assets/2024-11-15--stunt-island-elegy/si-scenario-editor-2.png">
-<img src="/assets/2024-11-15--stunt-island-elegy/si-scenario-editor-2.png" alt="drawing" width="640" border="1"/>
+<img src="/assets/2024-11-15--stunt-island-elegy/si-scenario-editor-2.png" alt="drawing" width="640"/>
 </a>
 <figcaption>One can also setup automations via a simple scripting interface</figcaption>
 </center>
@@ -85,7 +85,7 @@ Other well-known retrogaming places do not improve the outlook. GameFAQs has no 
 
 <center>
 <a href="/assets/2024-11-15--stunt-island-elegy/si-theatre.png">
-<img src="/assets/2024-11-15--stunt-island-elegy/si-theatre.png" alt="drawing" width="640" border="1"/>
+<img src="/assets/2024-11-15--stunt-island-elegy/si-theatre.png" alt="drawing" width="640"/>
 </a>
 <figcaption>The virtual moviegoers of the game are very friendly and will always applaud your work.</figcaption>
 </center>
@@ -100,7 +100,7 @@ To end this post on a positive note, playing Stunt Island today is easier than e
 
 <center>
 <a href="/assets/2024-11-15--stunt-island-elegy/si-question.png">
-<img src="/assets/2024-11-15--stunt-island-elegy/si-question.png" alt="drawing" width="640" border="1"/>
+<img src="/assets/2024-11-15--stunt-island-elegy/si-question.png" alt="drawing" width="640"/>
 </a>
 <figcaption>...and if you find the security question too annoying, there is a way around it.</figcaption>
 </center>

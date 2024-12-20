@@ -17,7 +17,7 @@ keywords:
 </a>
 <figcaption>Cologne parking meters. Click on the image for the high-resolution version.<br/>
 Script to generate the map available <a href="https://github.com/AlbertoMarnetto/annali-code/tree/master/2024-12-20--cologne-park-meters-map"><b>here</b></a><br/>
-Map data from  from <a href="openstreetmap.org/copyright">OpenStreetMap</a><br/>
+Map data from <a href="openstreetmap.org/copyright">OpenStreetMap</a><br/>
 Powered by <a href="https://www.geoapify.com/">Geoapify</a><br/>
 </figcaption>
 </center>
@@ -28,7 +28,7 @@ Before Corona I used to have a car, to travel to Cologne frequently for [some](h
 
 That said, my love for maps remains, and while doing some cleanup in my old files I rediscovered a small project I did some years ago, a map of the parking meters of the city of Cologne, which I created for my strategic attempts of saving a couple of euros while going downtown on Saturday evening. Why not publish an updated edition? Maybe a couple of people might find it useful, another couple may think it looks nice, and it's a fun little project anyway.
 
-The city of Cologne does not publish any map of the parking zones, but it kindly supports an open data project with many interesting datasets. One of them lists all parking meters in the city, with their geographical coordinates as well as their activity times and prices.
+The city of Cologne does not publish a map of the parking zones, but it kindly supports an open data project with many interesting datasets. One of them lists all parking meters in the city, with their geographical coordinates as well as their activity times and prices.
 
 The dataset is published every several years. At the time I took the 2018 edition, now the [2023 version](https://www.offenedaten-koeln.de/dataset/parkscheinautomaten-koeln/resource/ef089b7e-1f84-4c88-a548-3868c384bf72) seems to be the most up-to-date.
 
@@ -87,6 +87,7 @@ I can encode some extra information using color and shape of the markers, so I u
 
 ```
 $ cat psa_offene_daten_2023.csv | awk -F';' '{ print $8 }' | sort | uniq | wc -l
+
 49
 ```
 
@@ -95,8 +96,8 @@ $ cat psa_offene_daten_2023.csv | awk -F';' '{ print $8 }' | sort | uniq | wc -l
 <a href="/assets/2024-12-20--cologne-parking-meters/strange-times.png">
 <img src="/assets/2024-12-20--cologne-parking-meters/strange-times.png" alt="drawing" width="640" border="1"/>
 </a>
-<figcaption>I am sure that they had a good reason to set these times, but good luck remembering them.<br/>
-Also, notice now the file still does not use Unicode. I could set a legacy encoding and display the umlauts correctly, but I refuse to do so in 2024.
+<figcaption style="max-width: 75ch; font-size:smaller">I am sure that they had a good reason to set these times, but good luck remembering them.<br/>
+Also, notice now the file still uses the Winsows-1252 encoding instead of Unicode. I could set a legacy encoding and display the umlauts correctly, but I refuse to do so in 2024.
 </figcaption>
 </center>
 
@@ -106,6 +107,6 @@ At the end, in the spirit of my weekend trips, I decide to show in which times o
 
 ### Conclusion
 
-That, my reader, I leave to you. My own main takeaway is that the section of Luxemburgerstraße just outside the railroad bridge seems still to be free. I do not need this information any more, but it saved me some pennies when I went dancing to [Tanzraum](https://www.tanzschule-tanzraum.de/) in Barbarossaplatz. Hope you can also get some useful info. In any case, see you next time!
+That, my reader, I leave to you. My own main takeaway is that the section of Luxemburgerstraße just outside the railroad bridge seems still to offer free parking. I do not need this information anymore, but it saved me some pennies when I went dancing to [Tanzraum](https://www.tanzschule-tanzraum.de/) in Barbarossaplatz. Hope you can also get some useful info. In any case, see you next time!
 
 P.S. The source code to generate the map is available in [<b>this repository</b>](https://github.com/AlbertoMarnetto/annali-code/tree/master/2024-12-20--cologne-park-meters-map)
