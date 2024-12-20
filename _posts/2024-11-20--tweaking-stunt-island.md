@@ -1,5 +1,5 @@
 ---
-title: "800% Detail: Tweaking Stunt Island's 30-year-old 3D engine"
+title: "800% Detail: Tweaking Stunt Island's 30-year-old 3D Engine"
 layout: default
 ---
 
