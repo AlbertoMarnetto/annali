@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Annali da Samarcanda</title>
+		<atom:link href="https://marnetto.net/assets/index/rss.xml" rel="self" type="application/rss+xml"/>
+		<link>https://marnetto.net</link>
+		<description>Alberto Marnetto's Notebook – A blog about technology</description>
+		<item>
+			<title>The Big Map of Cologne Parking Meters / Die große Karte der Kölner Parkscheinautomaten</title>
+			<guid>https://marnetto.net/2024/11/20/cologne-parking-meters</guid>
+			<link>https://marnetto.net/2024/11/20/cologne-parking-meters</link>
+			<pubDate>20 Dec 2024 00:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>800% Detail: Tweaking Stunt Island’s 30-year-old 3D Engine</title>
+			<guid>https://marnetto.net/2024/11/20/tweaking-stunt-island</guid>
+			<link>https://marnetto.net/2024/11/20/tweaking-stunt-island</link>
+			<pubDate>28 Nov 2024 00:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>An Elegy to Stunt Island</title>
+			<guid>https://marnetto.net/2024/11/15/stunt-island-elegy</guid>
+			<link>https://marnetto.net/2024/11/15/stunt-island-elegy</link>
+			<pubDate>15 Nov 2024 00:00:00 +0000</pubDate>
+		</item>
+	</channel>
+</rss>
+
