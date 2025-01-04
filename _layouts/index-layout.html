@@ -1,22 +1,26 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/site.css">
-	<!-- fonts -->
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=ABeeZee">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=0.75">
+		<meta charset="utf-8">
+		<title>{{ page.title }}</title>
+		<link rel="stylesheet" href="/site.css">
+		<!-- fonts -->
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=ABeeZee">
 
-    <!-- https://gist.github.com/bennylope/1894706 -->
-    <link rel="canonical" href="https://marnetto.net{{ page.url | replace:'index.html','' }}" />
-    <meta name="google-site-verification" content="ye2VPY43HoP4h8c89h4hhbRp9fXWu65wmxZHrW7RDaU" />
-    <meta name="google-site-verification" content="qg3QpNOuSkBDFGOQGZVSVGeCJedrw2epR4cv3b00VLY" />
+		<!-- https://gist.github.com/bennylope/1894706 -->
+		<link rel="canonical" href="https://marnetto.net{{ page.url | replace:'index.html','' }}" />
 
-  </head>
-  <body>
-	  <p class="title"><a href="/index.html">Annali da Samarcanda</a></p>
-	  <p class="subtitle">Alberto Marnetto's Notebook</p>
-	  <hr />
-      {{ content }}
-  </body>
+		<link rel="alternate" type="application/rss+xml"  title="RSS feed" href="/assets/index/rss.xml" />
+
+		<meta name="google-site-verification" content="ye2VPY43HoP4h8c89h4hhbRp9fXWu65wmxZHrW7RDaU" />
+		<meta name="google-site-verification" content="qg3QpNOuSkBDFGOQGZVSVGeCJedrw2epR4cv3b00VLY" />
+
+	</head>
+	<body>
+		<p class="title"><a href="/index.html">Annali da Samarcanda</a></p>
+		<p class="subtitle">Alberto Marnetto's Notebook</p>
+		<hr />
+		{{ content }}
+	</body>
 </html>
