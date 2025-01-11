@@ -1,43 +1,43 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/site.css">
-	<!-- fonts -->
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=ABeeZee">
+	<head>
+		<meta charset="utf-8">
+		<title>{{ page.title }}</title>
+		<link rel="stylesheet" href="/site.css?v=1">
+		<!-- fonts -->
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=ABeeZee">
 
-	<!-- https://stackoverflow.com/a/50081693 -->
-	{% if page.keywords %}
-	<meta name="keywords" content="{{ page.keywords | join: ', ' | escape }}">
-	{% endif %}
+		<!-- https://stackoverflow.com/a/50081693 -->
+		{% if page.keywords %}
+		<meta name="keywords" content="{{ page.keywords | join: ', ' | escape }}">
+		{% endif %}
 
-    <!-- https://gist.github.com/bennylope/1894706 -->
-    <link rel="canonical" href="https://marnetto.net{{ page.url | replace:'index.html','' }}" />
-  </head>
-  <body>
-	  <p class="title"><a href="/index.html">Annali da Samarcanda</a></p>
-	  <p class="subtitle">Alberto Marnetto's Notebook</p>
-	  <hr />
-      {{ content }}
+		<!-- https://gist.github.com/bennylope/1894706 -->
+		<link rel="canonical" href="https://marnetto.net{{ page.url | replace:'index.html','' }}" />
+	</head>
+	<body>
+		<p class="blog-title"><a href="/index.html">Annali da Samarcanda</a></p>
+		<p class="blog-subtitle">Alberto Marnetto's Notebook</p>
+		<hr />
+		{{ content }}
 
-	  <hr />
-	  <script src="https://giscus.app/client.js"
-			  data-repo="AlbertoMarnetto/annali-discussions"
-			  data-repo-id="R_kgDONftHHg"
-			  data-category="Announcements"
-			  data-category-id="DIC_kwDONftHHs4ClXAE"
-			  data-mapping="pathname"
-			  data-strict="0"
-			  data-reactions-enabled="0"
-			  data-emit-metadata="0"
-			  data-input-position="bottom"
-			  data-theme="light"
-			  data-lang="en"
-			  crossorigin="anonymous"
-			  async>
-	  </script>
+		<hr />
+		<script src="https://giscus.app/client.js"
+				data-repo="AlbertoMarnetto/annali-discussions"
+				data-repo-id="R_kgDONftHHg"
+				data-category="Announcements"
+				data-category-id="DIC_kwDONftHHs4ClXAE"
+				data-mapping="pathname"
+				data-strict="0"
+				data-reactions-enabled="0"
+				data-emit-metadata="0"
+				data-input-position="bottom"
+				data-theme="light"
+				data-lang="en"
+				crossorigin="anonymous"
+				async>
+		</script>
 
-	  No GitHub account? You can also send me your comment by mail at <a href="mailto:alberto.m.dev@gmail.com">alberto.m.dev@gmail.com</a>
-  </body>
+		No GitHub account? You can also send me your comment by mail at <a href="mailto:alberto.m.dev@gmail.com">alberto.m.dev@gmail.com</a>
+	</body>
 </html>
