@@ -25,6 +25,17 @@ Powered by <a href="https://www.geoapify.com/">Geoapify</a><br/>
 </figcaption>
 </center>
 
+<br/><br/>
+
+<center>
+<a href="/assets/2024-12-20--cologne-parking-meters/only-park-meters.jpg">
+<img src="/assets/2024-12-20--cologne-parking-meters/only-park-meters.jpg" alt="drawing" width="440" border="1"/>
+</a>
+<figcaption>A black and white view of the parkmeters, outlining the heart of the city.<br/>
+Thanks to <a href="https://anthonyhanswidjaja.com">Hans Widjaja</a> for the idea!
+</figcaption>
+</center>
+
 ### Intro
 
 Before Corona I used to have a car, to travel to Cologne frequently for [some](https://www.sorriso-sport-tanz.de/) [Brazilian](http://brasilonia.koelnrio.de/) [dance](https://forrodecolonia.com/) [party](https://forroindeutschland.wordpress.com/2010/11/11/ein-abend-beim-forro-koln/), to dislike paying for parking and to like maps. The pandemic freed me of many of these inconvenient habits, allowing me to spend more time at home in front of a screen instead of wasting time staying outside, exercising the body, having fun and making friends.
