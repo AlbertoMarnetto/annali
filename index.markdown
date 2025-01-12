@@ -21,6 +21,7 @@ html
 }
 </style>
 
+ <span style="display: flex;"> <span style="flex: 0 0 7em;">2025-01-12 :</span> [Windows 95 and a Bizarre Case of Font Drag and Drop]({% link _posts/2025-01-12--2025-01-12--windows-95-fonts.md %}) </span>
  <span style="display: flex;"> <span style="flex: 0 0 7em;">2024-12-20 :</span> [The Big Map of Cologne Parking Meters]({% link _posts/2024-12-20--cologne-parking-meters.md %}) </span>
  <span style="display: flex;"> <span style="flex: 0 0 7em; visibility: hidden;">2024-12-20 :</span> [Die große Karte der Kölner Parkscheinautomaten]({% link _posts/2024-12-20--cologne-parking-meters.md %}) </span>
  <span style="display: flex;"> <span style="flex: 0 0 7em;">2024-11-28 :</span> [800% Detail: Tweaking Stunt Island’s 30-year-old 3D Engine]({% link _posts/2024-11-20--tweaking-stunt-island.md %}) </span>

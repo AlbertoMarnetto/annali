@@ -1,46 +1,71 @@
 /* inspired by https://justinjackson.ca/words.html */
 html {
-  max-width: 80ch;
-  padding: 0em 1em;
-  margin: auto;
-  line-height: 1.5;
-  font-size: 1.25em;
-  font-family: "ABeeZee";
-  overflow-y: scroll;   /* https://stackoverflow.com/a/9341578/2453661 */
+	max-width: 80ch;
+	padding: 0em 1em;
+	margin: auto;
+	line-height: 1.5;
+	font-size: 1.25em;
+	font-family: "ABeeZee";
+	overflow-y: scroll;   /* https://stackoverflow.com/a/9341578/2453661 */
 }
 
-.title{
+.blog-title{
 	text-align:center;
-    display: block;
-    font-size: 2em;
-    margin-top: 0.2em;
-    margin-bottom: 0.00em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: bold;
+	display: block;
+	font-size: 2em;
+	margin-top: 0.2em;
+	margin-bottom: 0.00em;
+	margin-left: 0;
+	margin-right: 0;
+	font-weight: bold;
 }
 
-.subtitle{
+.blog-subtitle{
 	text-align:center;
-    display: block;
-    font-size: 1.15em;
-    margin-top: 0.00em;
-    margin-bottom: 1.0em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: bold;
+	display: block;
+	font-size: 1.15em;
+	margin-top: 0.00em;
+	margin-bottom: 1.0em;
+	margin-left: 0;
+	margin-right: 0;
+	font-weight: bold;
 	color: gray;
 }
 
+h2 { 
+	font-size: 1.5em; 
+	margin: .75em 0;
+}
+
+h2.post-title-with-subtitle {
+	margin-bottom: 0px;
+
+}
+
+p.post-subtitle {
+	color: gray;
+	font-weight: bold;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
 p {
-  text-align: justify;
+	text-align: justify;
 }
 
 pre {
-  padding: 1em 1em;
-  background-color: #f4f4f4;
+	padding: 1em 1em;
+	background-color: #f4f4f4;
+	white-space: pre;
 }
 
+code {
+	font-family: "Noto Sans Mono";
+	font-size: 80%;
+}
 img {
-  border: 1px solid #000000;
+	border: 1px solid #000000;
+}
+
+figcaption {
 }
