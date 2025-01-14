@@ -4,8 +4,8 @@ html {
 	padding: 0em 1em;
 	margin: auto;
 	line-height: 1.5;
-	font-size: 1.25em;
-	font-family: "ABeeZee";
+	font-size: 1.15em;
+	font-family: "ABeeZee", sans-serif;
 	overflow-y: scroll;   /* https://stackoverflow.com/a/9341578/2453661 */
 }
 
@@ -60,7 +60,7 @@ pre {
 }
 
 code {
-	font-family: "Noto Sans Mono";
+	font-family: "Noto Sans Mono", monospace;
 	font-size: 80%;
 }
 img {
