@@ -27,8 +27,10 @@ html
  <span style="display: flex;"> <span style="flex: 0 0 7em;">2024-11-28 :</span> [800% Detail: Tweaking Stunt Island’s 30-year-old 3D Engine]({% link _posts/2024-11-20--tweaking-stunt-island.md %}) </span>
  <span style="display: flex;"> <span style="flex: 0 0 7em;">2024-11-15 :</span> [An Elegy to Stunt Island]({% link _posts/2024-11-15--stunt-island-elegy.md %}) </span>
 
-## Other projects
+## Projects
 
 * [Namensmeister](https://play.google.com/store/apps/details?id=marnetto.namensmeister) : learning app, guess gender and plural of German names
 * [multidim](https://github.com/AlbertoMarnetto/multidim) :  C++ utilities for multidimensional containers
-* [Beltempo](https://github.com/AlbertoMarnetto/beltempo) :  A hybrid raster/vectorial image editing program, similar to Shutter's edit mode. WIP, currently on hold
+* [Beltempo](https://github.com/AlbertoMarnetto/beltempo) :  A hybrid raster/vectorial image editing program, similar to Shutter's edit mode. C++/Qt (Verdigris) WIP, currently on hold
+* [Stunt Island 8x detail patch]({% link _posts/2024-11-20--tweaking-stunt-island.md %}#download) : Modding Disney's Stunt Island, a 1992 flight simulation and filming game
+* [Stunts 1.1 mods]({% link assets/stunts/stunts.md %}) : Modding DSI's Stunts (aka 4D Sports Racing), a 1990 racing game

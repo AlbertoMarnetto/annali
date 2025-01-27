@@ -24,7 +24,7 @@ A small tragedy, for sure. Nobody got directly harmed by the game, unless they t
 
 True to its promise, Stunt Island gives the player the possibility to be both a plane stuntman and a filmmaker. 
 
-As stuntman, one can pilot an aircraft plane in 32 dangerous flying scenes, either as individual missions or in the context of a tournament. One can also create new stunts in a sophisticated set design tool. As filmmaker, one can use the same set designer to create any kind of film scene, regardless whether for an action-filled plane movie or a indoor phychological thriller. choose the setting, place cameras, position actors and scenery, use the integrated scripting language to make all entites move and interact. Then head to the post-production room and piece together the footage in a film.
+As stuntman, one can pilot an aircraft plane in 32 dangerous flying scenes, either as individual missions or in the context of a tournament. One can also create new stunts in a sophisticated set design tool. As filmmaker, one can use the same set designer to create any kind of film scene, regardless whether for an action-filled plane movie or a indoor psychological thriller. Choose the setting, place cameras, position actors and scenery, use the integrated scripting language to make all entites move and interact. Then head to the post-production room and piece together the footage in a film.
 
 <center>
 <a href="/assets/2024-11-15--stunt-island-elegy/si-mission.png">
