@@ -64,9 +64,7 @@ I start by opening the game executable in Ghidra. The first result is underwhelm
 
 <center>
 <a href="/assets/2024-11-20--tweaking-stunt-island/ghidra-raw.png">
-<a href="/assets/2024-11-20--tweaking-stunt-island/ghidra-raw.png">
 <img src="/assets/2024-11-20--tweaking-stunt-island/ghidra-raw.png" alt="drawing" width="800" border="1"/>
-</a>
 </a>
 </center>
 
