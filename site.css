@@ -1,12 +1,20 @@
 /* inspired by https://justinjackson.ca/words.html */
 html {
-	max-width: 80ch;
+	max-width: 90ch;
 	padding: 0em 1em;
 	margin: auto;
 	line-height: 1.5;
 	font-size: 1em;
 	font-family: "ABeeZee", sans-serif;
 	overflow-y: scroll;   /* https://stackoverflow.com/a/9341578/2453661 */
+	color: #ddd; background-color: #222;
+}
+
+a  {  
+	color: #adf; 
+}
+a:visited {
+	color: #bae;
 }
 
 .blog-title{
@@ -29,7 +37,14 @@ html {
 	margin-left: 0;
 	margin-right: 0;
 	font-weight: bold;
-	color: gray;
+}
+
+code {
+	font-family: "Noto Sans Mono", monospace;
+	font-size: 80%;
+}
+
+figcaption {
 }
 
 h2 { 
@@ -40,6 +55,10 @@ h2 {
 h2.post-title-with-subtitle {
 	margin-bottom: 0px;
 
+}
+
+img {
+	border: 1px solid #ddd;
 }
 
 p.post-subtitle {
@@ -55,17 +74,7 @@ p {
 
 pre {
 	padding: 1em 1em;
-	background-color: #f4f4f4;
+	background-color: #333;
 	white-space: pre;
 }
 
-code {
-	font-family: "Noto Sans Mono", monospace;
-	font-size: 80%;
-}
-img {
-	border: 1px solid #000000;
-}
-
-figcaption {
-}
