@@ -63,7 +63,7 @@ I used the Search Console to fix a bug, but I found it useful in general and I r
 <figcaption>My audience is very international.</figcaption>
 </center>
 
-Not only the list allowed me to enjoy reading a couple of articles speaking about my Stunt Island modding efforts, but it led me to discover the site [Two Stop Bits](https://twostopbits.com), a Hacker News clone focused on retrocomputing. A very pleasant discovery that I take as reward for my effort.
+Not only the list allowed me to enjoy reading a couple of articles speaking about my Stunt Island modding adventures, but it led me to discover the site [Two Stop Bits](https://twostopbits.com), a Hacker News clone focused on retrocomputing. A very pleasant discovery that I take as reward for my effort.
 
 Now that I have fixed my SEO issues, it's time to go back to more familiar technology domains. See you soon for my writeup about modding Brøderbund's Stunts. You can already download the provisional fruits of my work in the [dedicated page](/projects/stunts.html), or try to beat my mediocre driving skills in the running [ZakStunts Championship](https://zak.stunts.hu/).
 
