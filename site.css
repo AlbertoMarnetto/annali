@@ -61,6 +61,10 @@ img {
 	border: 1px solid #ddd;
 }
 
+video {
+	border: 1px solid #ddd;
+}
+
 p.post-subtitle {
 	color: gray;
 	font-weight: bold;
