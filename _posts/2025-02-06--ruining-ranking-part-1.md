@@ -11,6 +11,13 @@ That said, I was surely not happy when my site suddenly disappeared from Google 
 
 ### Part 1: become a dangerous cybercriminal
 
+<center>
+<a href="/assets/2025-02-06--ruining-ranking-part-1/benigni.png">
+<img src="/assets/2025-02-06--ruining-ranking-part-1/benigni.png" alt="Benigni in Johnny Stecchino, holding a banana" width="400" border="1"/>
+</a>
+<figcaption>Forgive me this one meme image. <a href="https://www.imdb.com/title/tt0102164/">This film</a> is one of the pillars of Italian pop culture of my generation.</figcaption>
+</center>
+
 #### The discovery
 
 My problems did not start with Google search. On December 17th, I got a mail from Netlify, my host, stating that they took down my site for violating the TOS. At first I thought that they suspected piracy because of my [Stunt Island patch](/2024/11/20/tweaking-stunt-island.html#download). I was much more surprised when I typed the address of my site and got this:
@@ -82,4 +89,4 @@ My domain name has now a [immaculate reputation](https://www.virustotal.com/gui/
 
 Harder to repair is the downranking of my site. One day before the incident my Stunt Island writeup was on page #2 when googling for the game, now it's as good as invisible. Lesson learned: before submitting original binaries I'll always scan them in advance, and thanks to Virustotal doing that is quite fast and simple.
 
-See you soon for step 2, where I compounded my first error with another mistake, granting myself complete invisibility from Google for a couple of weeks.
+See you soon for [step 2](/2025/02/09/ruining-ranking-part-2.html), where I compounded my first error with another mistake, granting myself complete invisibility from Google for a couple of weeks.
