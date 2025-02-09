@@ -4,16 +4,16 @@ layout: default
 permalink: /projects/stunts.html
 ---
 
-This page contains my mods of DSI's Stunts (aka 4D Sports Driving). They are based on the [Restunts](https://wiki.stunts.hu/wiki/Restunts) project. I'll be discussing the changes (under my username HerrNove) in [ZakStunts' forum](https://forum.stunts.hu/index.php?board=90.0).
+This page contains my mods of DSI's Stunts (aka 4D Sports Driving). I'll be discussing the changes (under my username HerrNove) in [ZakStunts' forum](https://forum.stunts.hu/index.php?board=90.0).
 
 The code for these projects is available in [this repo](https://github.com/AlbertoMarnetto/restunts).
 
 ## Supersight
 
-A mod increasing the field of view to a radius of up to 10 tiles around the car and drawing all objects in high resolution. For very crowded scenes, it automatically reduces the detail to avoid running out of memory. Press F5 to see if this is happening (it will print the number of discarded tiles in the upper-left corner). See [my post](https://forum.stunts.hu/index.php?topic=4400.msg96441#msg96441) for more details – I intend to produce a more detailed writeup when I find the time.
+A mod increasing the field of view to a radius of up to 10 tiles around the car and drawing all objects in high resolution. For very crowded scenes, it automatically reduces the detail to avoid running out of memory. Press F5 to see if this is happening (it will print the number of discarded tiles in the upper-left corner). See [my post](https://forum.stunts.hu/index.php?topic=4400.msg96441#msg96441) for more details – I intend to produce a more detailed writeup soon.
 
 Download:
-* <b>[Supersight v1.2](/assets/stunts/RESTUNTS-56aa34d.EXE)</b>
+* <b>[Supersight v1.4](/assets/stunts/RESTUNTS-747817b.EXE)</b>
 
 A demonstration video:
 <video controls width="640">
@@ -21,9 +21,11 @@ A demonstration video:
   <!-- ffmpeg -i *.mkv(om[1]) -vf "crop=639:399:0:0" -c:a mp3 stunts-282ARG-3.mp4 -->
 </video>
 
-## Fixed Restunts
+---
 
-A copy of vanilla Restunts, should behave exactly like the original game. It has some fixes with respect to the [current Restunts master](https://bitbucket.org/dreadnaut/restunts/src/master/):
+## Restunts
+
+A compiled copy of [Restunts](https://wiki.stunts.hu/wiki/Restunts), a project aiming the rewrite Stunts in C language. The project has been partially completed At the moment some parts have been rewritten in C, while some are still provided by the assembler files extracted from the game executable. My copy has some fixes with respect to the [current Restunts master](https://bitbucket.org/dreadnaut/restunts/src/master/), so this executable should be even nearer to the original game:
 
 * the audio options work, e.g. use `/ssb` for Sound Blaster audio. By copying the appropriate driver files one can also select MT32 (`/smt`) or other supported cards
 * the replays are processed correctly, without desyncing
@@ -31,6 +33,8 @@ A copy of vanilla Restunts, should behave exactly like the original game. It has
 Download:
 
 * <b>[Restunts](/assets/stunts/RESTUNTS-ab5cfab.EXE)</b>
+
+---
 
 ## Stunts with binoculars
 
