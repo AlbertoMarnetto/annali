@@ -14,11 +14,12 @@ A mod increasing the field of view to a radius of up to 10 tiles around the car 
 
 Download:
 * <b>[Supersight v1.4](/assets/stunts/RESTUNTS-747817b.EXE)</b>
+* <b>[Supersight v1.5 beta](/assets/stunts/RESTUNTS-3755df3.EXE)</b> : renders more polygons, but may run out of memory for very complex car models
 
 A demonstration video:
 <video controls width="640">
-  <source src="/assets/stunts/stunts-282ARG-3.mp4" />
-  <!-- ffmpeg -i *.mkv(om[1]) -vf "crop=639:399:0:0" -c:a mp3 stunts-282ARG-3.mp4 -->
+  <source src="/assets/stunts/stunts--282ARG-3.mp4" />
+  <!-- ffmpeg -i *.mkv(om[1]) -vf "crop=639:399:0:0" -c:a mp3 stunts--282ARG-3.mp4 -->
 </video>
 
 ---
