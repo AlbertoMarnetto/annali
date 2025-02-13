@@ -19,11 +19,11 @@ I would have fumbled in the dark for quite a long time, were it not for the good
 
 Try the Search Console, suggests Google. I had a vague idea that Google offers instruments for SEO, but I thought they were paid tools for professional webmasters. But no, the Console is free and available to anyone. It took some effort to prove ownership of the various copies of my site but, once done that, I was good to go.
 
-
 <center>
 <a href="/assets/2025-02-09--ruining-ranking-part-2/google-search-console.png">
 <img src="/assets/2025-02-09--ruining-ranking-part-2/google-search-console.png" alt="Google Search Console" width="700" border="1"/>
 </a>
+<figcaption>No dark theme, unfortunately.</figcaption>
 </center>
 
 The fact that I needed to add four different “properties”, as Google calls them, is due to the chaotic start of this site:

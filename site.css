@@ -1,4 +1,6 @@
 /* inspired by https://justinjackson.ca/words.html */
+/* remember to update the version number in _layouts when making changes here */
+
 html {
 	max-width: 90ch;
 	padding: 0em 1em;
@@ -42,20 +44,24 @@ a:visited {
 
 code {
 	font-family: "Noto Sans Mono", monospace;
-	font-size: 80%;
+	font-size: 90%;
 }
 
+/*
 details summary {
 	font-size: 1.5em;
 	margin: 1.75em .2em 0.75em .2em;
 	background-color: #444;
 }
+*/
+
 details summary::marker {
 	content: " ▸ ";
 }
 details[open] summary::marker {
     content: " ▾ ";
 }
+
 figcaption {
 	font-style: italic;
 	max-width: 80ch;
@@ -78,14 +84,19 @@ h1.post-title-with-subtitle {
 h2 {
 	font-size: 1.5em;
 	margin: 1.75em 0 0.75em 0;
+	background-color: #444;
 }
 
 img {
 	border: 1px solid #ddd;
 }
 
-video {
-	border: 1px solid #ddd;
+p {
+	text-align: justify;
+}
+
+p.dim {
+	color: #aaa;
 }
 
 p.post-subtitle {
@@ -96,13 +107,14 @@ p.post-subtitle {
 	margin-bottom: 0px;
 }
 
-p {
-	text-align: justify;
-}
-
 pre {
 	padding: 1em 1em;
 	background-color: #333;
 	white-space: pre;
+	font-size: 80%;
+}
+
+video {
+	border: 1px solid #ddd;
 }
 

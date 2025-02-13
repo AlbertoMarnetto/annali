@@ -21,6 +21,8 @@ html
 }
 </style>
 
+ <!--<span style="display: flex;"> <span style="flex: 0 0 7em;">2025-02-09 :</span> [Enhancing Brøderbund's Stunts for modern 386 systems (part 2)](2025/02/15/broderbund-stunts-2.html) </span> -->
+ <span style="display: flex;"> <span style="flex: 0 0 7em;">2025-02-20 :</span> [SuperSight: a graphical enhancement mod for Brøderbund’s Stunts (part 1)](2025/02/20/broderbund-stunts-1.html) </span>
  <span style="display: flex;"> <span style="flex: 0 0 7em;">2025-02-09 :</span> [How to ruin your site reputation in two easy steps (part 2)](2025/02/09/ruining-ranking-part-2.html) </span>
  <span style="display: flex;"> <span style="flex: 0 0 7em;">2025-02-06 :</span> [How to ruin your site reputation in two easy steps (part 1)](2025/02/06/ruining-ranking-part-1.html) </span>
  <span style="display: flex;"> <span style="flex: 0 0 7em;">2025-01-12 :</span> [Windows 95 and a Bizarre Case of Font Drag and Drop]({% link _posts/2025-01-12--2025-01-12--windows-95-fonts.md %}) </span>
