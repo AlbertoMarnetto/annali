@@ -31,8 +31,8 @@ html
 
 ## Projects
 
-* [Namensmeister](https://play.google.com/store/apps/details?id=marnetto.namensmeister) : learning app, guess gender and plural of German names
-* [multidim](https://github.com/AlbertoMarnetto/multidim) :  C++ utilities for multidimensional containers
-* [Beltempo](https://github.com/AlbertoMarnetto/beltempo) :  A hybrid raster/vectorial image editing program, similar to Shutter's edit mode. C++/Qt (Verdigris). Currently on hold
-* [Stunt Island 8x detail patch]({% link _posts/2024-11-20--tweaking-stunt-island.md %}#download) : Mod for Stunt Island (Disney, 1992), a flight simulation and filming game
-* [Stunts 1.1 mods](projects/stunts.html) : Mods for Stunts (DSI, 1990), a racing game also known as 4D Sports Racing
+* [Stunts mods](projects/stunts.html) : a graphical enhancement patch and other mods for Stunts (DSI/Brøderbund, 1990), a racing game also known as 4D Sports Driving.
+* [Stunt Island 8x detail patch]({% link _posts/2024-11-20--tweaking-stunt-island.md %}#download) : graphical enhancement mod for Stunt Island (Disney, 1992), a flight simulation and filming game.
+* [Beltempo](https://github.com/AlbertoMarnetto/beltempo) :  a hybrid raster/vectorial image editing program, similar to Shutter's edit mode. C++/Qt (Verdigris). Currently on hold.
+* [multidim](https://github.com/AlbertoMarnetto/multidim) :  C++ utilities for multidimensional containers.
+* [Namensmeister](https://play.google.com/store/apps/details?id=marnetto.namensmeister) : learning app to guess gender and plural of German names.
