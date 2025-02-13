@@ -3,9 +3,9 @@ title: How to ruin your site reputation in two easy steps (part 2)
 layout: default
 ---
 
-## How to ruin your site reputation in two easy steps
+# How to ruin your site reputation in two easy steps
 
-### Part 2: convince Google to ignore your site
+## Part 2: convince Google to ignore your site
 
 After clearing my criminal record as described in [part 1](/2025/02/06/ruining-ranking-part-1), I was looking forward to see my site indexed again on Google. One day passed, then two, but nothing changed: googling for keywords associated to my post yielded no results, even when I was searching for unique sentence fragments that were likely to only appear on my pages. Curiously, Bing and related search engines (like my favorite, [DuckDuckGo](duckduckgo.com)) were showing my site with no problem. 
 
@@ -52,7 +52,7 @@ So we are in a Pirandellian situation: my site is available under three or four 
 
 Once understood the problem, the solution is simple: first I redirected the URL of the pinned build to the main domain name, then I requested Google to re-visit the pages. I thought the issue would be fixed in a matter of minutes, but I was disappointed: it took more than one week for the crawler to fulfill my re-index request. Such kind of delay is surely a good way to prevent abuse by SEO professionals, but it was frustrating for me. Anyway, I am not in the position to handle with Google; around New Year's Eve my site was fully relisted. I had my happy end, and this is what matters.
 
-## Postscript
+# Postscript
 
 I used the Search Console to fix a bug, but I found it useful in general and I recommend every site owner to check it out. Not only it points out if a page has issues that prevent it to be indexed, but it shows which user queries led your site to be displayed in Google searches. My favorite function, however, is the list of sites that are providing incoming links.
 

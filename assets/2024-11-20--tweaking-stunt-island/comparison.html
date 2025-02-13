@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<link rel="stylesheet" href="/site.css?v=1">
 <style>
 /* https://levelup.gitconnected.com/how-to-create-a-before-after-image-slider-with-css-and-js-a609d9ba77bf */
 html {
 	box-sizing: border-box;
 	font-size: 1.25em;
-	font-family: "ABeeZee";
+	font-family: "ABeeZee", sans-serif;
+	color: #ddd; background-color: #222;
 }
 *, *:before, *:after {
 	box-sizing: inherit;
 }
+
+a  {
+	color: #adf;
+}
+a:visited {
+	color: #bae;
+}
+
 .container {
 	position: relative;
 	width: 640px;
@@ -108,7 +117,6 @@ html {
 </head>
 
 <body>
-	<a href="/2024/11/20/tweaking-stunt-island.html#comparison">Back to the main article</a>
 	<center>
 		<div class='container'>
 			<div class='img background-imgQ1Q'></div>
@@ -129,6 +137,12 @@ html {
 			<div class='slider-button' id="slider-buttonQ2Q"></div>
 		</div>
 		Scenario editor, vanilla game (left) and patched (right)
+
+		<br/>
+		<hr/>
+		<br/>
+
+		<a href="/2024/11/20/tweaking-stunt-island.html#comparison">Back to the main article</a>
 	</center>
 </body>
 

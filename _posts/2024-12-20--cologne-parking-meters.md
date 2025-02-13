@@ -12,7 +12,7 @@ keywords:
   - map
 ---
 
-## The Big Map of Cologne Parking Meters<br/> Die große Karte der Kölner Parkscheinautomaten
+# The Big Map of Cologne Parking Meters<br/> Die große Karte der Kölner Parkscheinautomaten
 
 <center>
 <a href="/assets/2024-12-20--cologne-parking-meters/final.jpg">
@@ -36,7 +36,7 @@ Thanks to <a href="https://anthonyhanswidjaja.com">Hans Widjaja</a> for the idea
 </figcaption>
 </center>
 
-### Intro
+## Intro
 
 Before Corona I used to have a car, to travel to Cologne frequently for [some](https://www.sorriso-sport-tanz.de/) [Brazilian](http://brasilonia.koelnrio.de/) [dance](https://forrodecolonia.com/) [party](https://forroindeutschland.wordpress.com/2010/11/11/ein-abend-beim-forro-koln/), to dislike paying for parking and to like maps. The pandemic freed me of many of these inconvenient habits, allowing me to spend more time at home in front of a screen instead of wasting time staying outside, exercising the body, having fun and making friends.
 
@@ -64,7 +64,7 @@ The dataset lists all the geographical coordinates of the parking meters. Now we
 ) </figcaption>
 </center>
 
-### The proper way
+## The proper way
 
 If we want a full map and more flexibility, we need to do things properly:
 
@@ -110,7 +110,7 @@ $ cat psa_offene_daten_2023.csv | awk -F';' '{ print $8 }' | sort | uniq | wc -l
 <a href="/assets/2024-12-20--cologne-parking-meters/strange-times.png">
 <img src="/assets/2024-12-20--cologne-parking-meters/strange-times.png" alt="drawing" width="640" border="1"/>
 </a>
-<figcaption style="max-width: 75ch; font-size:smaller">I am sure that they had a good reason to set these times, but good luck remembering them.<br/>
+<figcaption>I am sure that they had a good reason to set these times, but good luck remembering them.<br/>
 Also, notice now the file still uses the Windows-1252 encoding instead of Unicode. I could set a legacy encoding and display the umlauts correctly, but I refuse to do so in 2024.
 </figcaption>
 </center>
@@ -119,7 +119,7 @@ Also, notice now the file still uses the Windows-1252 encoding instead of Unicod
 
 At the end, in the spirit of my weekend trips, I decide to show in which times of the weekend one can park for free, to help the partygoers to better plan their trip.
 
-### Conclusion
+## Conclusion
 
 That, my reader, I leave to you. My own main takeaway is that the section of Luxemburgerstraße just outside the railroad bridge seems still to offer free parking. I do not need this information anymore, but it saved me some pennies when I went dancing to [Tanzraum](https://www.tanzschule-tanzraum.de/) in Barbarossaplatz. Hope you can also get some useful info. In any case, see you next time!
 

@@ -3,13 +3,13 @@ title: How to ruin your site reputation in two easy steps (part 1)
 layout: default
 ---
 
-## How to ruin your site reputation in two easy steps
+# How to ruin your site reputation in two easy steps
 
 My blog is a newborn one and still almost unknown. My experience with search engine optimization is basically zero, but this is not a problem – I am not aiming to be on the top of any web search. 
 
 That said, I was surely not happy when my site suddenly disappeared from Google search for good. After spending hours to find out why it happened, I discovered that I had managed to commit not one but two crimes against visibility. I haven't managed to return my few blog pages to their previous ranking, but at least I have learnt some lessons - and got material for a new war story.
 
-### Part 1: become a dangerous cybercriminal
+## Part 1: become a dangerous cybercriminal
 
 <center>
 <a href="/assets/2025-02-06--ruining-ranking-part-1/benigni.png">
@@ -18,7 +18,7 @@ That said, I was surely not happy when my site suddenly disappeared from Google 
 <figcaption>Forgive me this one meme image. <a href="https://www.imdb.com/title/tt0102164/">This film</a> is one of the pillars of Italian pop culture of my generation.</figcaption>
 </center>
 
-#### The discovery
+### The discovery
 
 My problems did not start with Google search. On December 17th, I got a mail from Netlify, my host, stating that they took down my site for violating the TOS. At first I thought that they suspected piracy because of my [Stunt Island patch](/2024/11/20/tweaking-stunt-island.html#download). I was much more surprised when I typed the address of my site and got this:
 
@@ -65,7 +65,7 @@ It was not only URLhaus which had me marked as criminal. The site Virustotal has
 </center>
 
 
-#### The cleanup
+### The cleanup
 
 There was not much to do but try to get myself removed by at least some of these lists. Fortunately, Virustotal has a very practical [contact directory](https://docs.virustotal.com/docs/false-positive-contacts) for false positives. I had not time to write to 42 different vendors, however, so I decided to focus on the most important things:
 * Contact URLhaus and ask them to remove me from their blocklist

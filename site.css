@@ -7,7 +7,8 @@ html {
 	font-size: 1em;
 	font-family: "ABeeZee", sans-serif;
 	overflow-y: scroll;   /* https://stackoverflow.com/a/9341578/2453661 */
-	color: #ddd; background-color: #222;
+	color: #ddd;
+	background-color: #222;
 }
 
 a  {  
@@ -44,17 +45,39 @@ code {
 	font-size: 80%;
 }
 
+details summary {
+	font-size: 1.5em;
+	margin: 1.75em .2em 0.75em .2em;
+	background-color: #444;
+}
+details summary::marker {
+	content: " ▸ ";
+}
+details[open] summary::marker {
+    content: " ▾ ";
+}
 figcaption {
+	font-style: italic;
+	max-width: 80ch;
 }
 
-h2 { 
+figcaption em {
+	font-style: normal;
+}
+
+h1 {
+	text-align:center;
 	font-size: 1.5em; 
-	margin: .75em 0;
+	margin: 1.75em 0 1.75em 0;
 }
 
-h2.post-title-with-subtitle {
+h1.post-title-with-subtitle {
 	margin-bottom: 0px;
+}
 
+h2 {
+	font-size: 1.5em;
+	margin: 1.75em 0 0.75em 0;
 }
 
 img {
@@ -66,7 +89,8 @@ video {
 }
 
 p.post-subtitle {
-	color: gray;
+	color: #999;
+	text-align:center;
 	font-weight: bold;
 	margin-top: 0px;
 	margin-bottom: 0px;

@@ -3,11 +3,11 @@ title: "800% Detail: Tweaking Stunt Island's 30-year-old 3D Engine"
 layout: default
 ---
 
-## 800% Detail: Tweaking Stunt Island's 30-year-old 3D Engine
+# 800% Detail: Tweaking Stunt Island's 30-year-old 3D Engine
 
 Note: the patch is available at the end of the article (<b><a href="#download">HERE</a></b>). This post is about its making-of.
 
-### Intro
+## Intro
 
 Stunt Island is a flight simulator from the year 1992. You can read more about it in my [previous post]({% link _posts/2024-11-15--stunt-island-elegy.md %}). 
 
@@ -52,7 +52,7 @@ In the following, I'll show the process and some failed tries. Even if this is f
 
 Also, I hope to revive some interest in an old, but beautiful and unique game.
 
-### Start
+## Start
 
 Since I have never debugged DOS programs, the first step is to build up the toolset. I need
 
@@ -116,7 +116,7 @@ This looks like assembly code mixed with some higher-level C code constructs, de
 
 Oh, I see, “the code calls other functions which perform some specific tasks”. Awesome. Thanks all the same, AI. See you in some years, and let's rely on carbon-based intelligence in the meanwhile.
 
-### A matter of detail
+## A matter of detail
 
 The static analysis has not yielded any result yet, but I have another idea. Stunt Island has a “Detail” setting: 
 
@@ -201,7 +201,7 @@ Yes, the 16-bit value at that address matches the detail level I set (`0x3d70/0x
 
 The value is still there. Very nice.
 
-### Following the dataflow
+## Following the dataflow
 
 Now I have to see where this variable is used. Let's go back to Ghidra, and look for the low two bytes.
 
@@ -253,7 +253,7 @@ Well, there is no other place to look, so I ask Ghidra to decompile this section
 
 I ensure that the decompilation is right by setting a breakpoint at the start of the fragment (`BP CS:76E8`), and for added safety I verify that the program counter (`EIP`) really points to the locations shown in the listing. This code gets executed many, many times per frame – have I finally reached the goal?
 
-### Ace gets glasses
+## Ace gets glasses
 
 Let's try to understand the code: first it decrements `AX` and executes what follows only if it's still positive. Not sure what this means but some live debugging shows that the condition is met quite often anyway. The following calculation is easier to understand: in the x86 architecture, calling `MUL` multiplies `AX` by the operand, leaving the  result in `DX:AX`. With maximum detail, we know that `DS:91F2` will be set at `0xFFFD`, so that the multiplication becomes almost a 16-bit left shift, setting `DX` to `(AX_old - 1)`. The lower the detail, the lower `DX` will be. Then the code executes the following branch only if `CX <= DX + BX`, otherwise it gets skipped.
 
@@ -337,7 +337,7 @@ And everything goes as hoped: the quality is great and the game (after cranking 
 
 By the way, the fact that the three most significant bits of `DX` are discarded does not seem to lead to any noticeable glitch; I could add some code checking for overflow and saturating the value, but this would require more bytes than I am replacing. I might create the algorithm elsewhere and then `JMP` to it, but at the price of making the code slower and the patching process more difficult. The current version is simple and good enough for me, and after all one must leave some fun to future tinkerers.
 
-### Washing the dishes
+## Washing the dishes
 
 Before calling it a day, I still have some housework to do.
 
@@ -373,7 +373,7 @@ So, here the best Stunt Island one can have, with the enhanced rendering engine 
 </a>
 </center>
 
-### Want to try it out?
+## Want to try it out?
 
 To play the “definitive” version of Stunt Island, three steps are needed:
 

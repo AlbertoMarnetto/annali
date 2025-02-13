@@ -3,7 +3,7 @@ title: An Elegy to Stunt Island
 layout: default
 ---
 
-## An Elegy to Stunt Island
+# An Elegy to Stunt Island
 
 What is Stunt island?
 
@@ -13,7 +13,7 @@ For me, Stunt Island is a tragedy.
 
 A small tragedy, for sure. Nobody got directly harmed by the game, unless they tried to revive in real life some of the missions. But I find it quite sad to see how much of the potential of this work got wasted. 
 
-### For those who do not know the game
+## For those who do not know the game
 
 <center>
 <a href="/assets/2024-11-15--stunt-island-elegy/si-freeflight.png">
@@ -46,7 +46,7 @@ This is only a glimpse of what the game had to offer. Other reviews can surely d
 <figcaption>The thick game manual showed the high production value of the game.</figcaption>
 </center>
 
-### The neglected child
+## The neglected child
 
 It's hard for me to understand why this game failed to leave a mark in the videogame history. 
 
@@ -75,7 +75,7 @@ Some fans of the game also formed a club called SIFA (Stunt Island Filmmakers' A
 However, even the creative community slowly moved on to other tools, some of its members even graduating to professional filmmaking. The flow of films and support materials seems to dry out around 2000, and the community discussion channels (Yahoo Groups, Geocities) went mostly lost with the shutdown of their hosting channels, as they never migrated to newer platforms.
 
 
-### Stunt Island today
+## Stunt Island today
 
 Stunt Island is still remembered, but it has not (yet?) been blessed by a nostalgia-fueled revival. Other games of the era enjoy small but active fan communities, producing a new content at a steady pace: for example, as of November 2024, Broderbund's “Stunts” has a tournament currently running on the dedicated fan site [Zak Stunts](https://zak.stunts.hu), and the modding community for the original Prince of Persia has at least six maps released since the start of the year (published at [popot.org](https://www.popot.org)).
 
@@ -90,7 +90,7 @@ Other well-known retrogaming places do not improve the outlook. GameFAQs has no 
 <figcaption>The virtual moviegoers of the game are very friendly and will always applaud your work.</figcaption>
 </center>
 
-### Conclusion
+## Conclusion
 
 Well, I really hope that this game gets rediscovered. Retrogaming is fashionable today, and Stunt Island still has much to offer to gamers and creatives alike. It would be nice to see some speedruns of the missions, some fan-made mission pack, or maybe a AI-generated film.
 
