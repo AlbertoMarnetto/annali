@@ -83,8 +83,9 @@ h1.post-title-with-subtitle {
 
 h2 {
 	font-size: 1.5em;
-	margin: 1.75em 0 0.75em 0;
+	margin: 1.75em 0.2em 0.75em 0;
 	background-color: #444;
+	padding-left: 0.2em;
 }
 
 img {

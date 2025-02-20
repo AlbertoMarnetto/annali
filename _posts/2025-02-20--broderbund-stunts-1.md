@@ -173,7 +173,7 @@ Well, there is no way that the game is contained in less than one KByte, so I mu
 
 Luckily, I could ignore all these details because the community has already produced a much simpler `GAME.EXE` containing the final product. It can be grabbed from the Restunts repository, so I cloned that and proceeded to analyze the [executable](https://github.com/AlbertoMarnetto/restunts/blob/master/stunts/game.exe), blissfully ignoring what the rest of the repository had to offer. This is mistake #2.
 
-I started `GAME.EXE` under [Dosbox-Debug](https://www.vogons.org/viewtopic.php?t=3944) and navigate to the options menu.
+I started `GAME.EXE` under [Dosbox-Debug](https://www.vogons.org/viewtopic.php?t=3944) and navigated to the options menu.
 
 <center>
 <a href="/assets/stunts/stunts--menu.png">
@@ -181,13 +181,13 @@ I started `GAME.EXE` under [Dosbox-Debug](https://www.vogons.org/viewtopic.php?t
 </a>
 </center>
 
-There I found out that this game does not save its options in a file. This prevented me from setting a breakpoint on that event, as I did when hacking Stunt Island. And just like it happened at that time, none of the other techniques (breaking on keyboard input, etc.) worked. I opened the executable in Ghidra to look up the strings in the menu, but they were not there.
+There I found out that this game does not save its options in a file. This prevented me from setting a breakpoint on that event, as I did when hacking Stunt Island. And just like it happened at that time, no alternative other technique (such as breaking on keyboard input) worked. I opened the executable in Ghidra to look up the strings in the menu, but they were not there.
 
-I wasted an hour on this screen before deciding to have a look at what the rest of the Restunts package has to offer. Which was a lot. So much that, forget the options menu, this post will have to take a detour.
+I wasted an hour on this screen before deciding to have a look at what the rest of the Restunts package had to offer. Which was a lot. So much that, forget the options menu, this post will have to take a detour.
 
 ## The Restunts project
 
-In the first decade of the century, a group of Stunts fans tried to get the source code of the game, to better understand the algorithms and create mods. [Kevin Pickell](http://www.scale18.com/cgi-bin/page/kpickell.html), one of the main programmers, sadly informed them that the code was lost. As a consolation prize, it also told them that the game was to be considered freeware and it could be distributed without problems. Undeterred, a handful of coders decided to reverse engineer the game from the machine code. So, not only they producted the synthesized `GAME.EXE`, but they fed it through IDA Pro which disassembled it and decomposed it in segments. After that, they started to label every assembly function and port them to a C equivalent. Although the momentum faded out and the initiative came to a halt in 2015, they made [good progress](https://re.stunts.no/status/) on their analysis, leaving behind a lot of information.
+In the first decade of the century, a group of Stunts fans tried to get the source code of the game, to better understand the algorithms and create mods. [Kevin Pickell](http://www.scale18.com/cgi-bin/page/kpickell.html), one of the main programmers, sadly informed them that the code was lost. As a consolation prize, he also told them that the game was to be considered freeware and it could be distributed without problems. Undeterred, a handful of coders decided to reverse engineer the game from the machine code. Not only they producted the synthesized `GAME.EXE`, but they disassembled it and decomposed it in segments with the help of IDA Pro. After that, they started to label every assembly function and port it to a C equivalent. Although the momentum faded out and the initiative came to a halt in 2015, they made [good progress](https://re.stunts.no/status/) on their analysis, leaving behind a wealth of information.
 
 A more detailed history of the project can be found on the relative [wikipage](https://wiki.stunts.hu/wiki/Restunts). But now, let's see what the Restunts project encompasses:
 
@@ -208,7 +208,7 @@ For the moment I did not need to build the project; just reading the source code
 
 ## The options menu, revisited
 
-Searching for `option` in the source code led me to the ported `stuntsmainimpl` function, which was simple to understand.
+Searching for `option` in Restunts' code led me to the ported `stuntsmainimpl` function, which was simple to understand.
 
 <center>
 <a href="/assets/stunts/stunts--main-menu.png">
@@ -234,16 +234,16 @@ loc_13046:
     jmp     cs:off_1314A[bx]
 ```
 
-So the function calls `show_dialog`, that (based on common sense and on what I saw in other points) returns in the register `AL` the ordinal number of the option chosen by the user. After some convolutions, the function uses the result for a computed jump in the table at `off_1314A`. I bet there was a `switch` statement in the original. I could not understand some quirks (why adding 1? Why doing it with a `sub` instruction?) but it's not important.
+The function calls `show_dialog`, which (based on common sense and on what I saw in other points) returns in the register `AL` the ordinal number of the option chosen by the user. After some convolutions, the function uses the result for a computed jump in the table at `off_1314A`. I bet there was a `switch` statement in the original. I could not understand some quirks (why adding 1? Why doing it with a `sub` instruction?) but it's not important.
 
 <center>
 <a href="/assets/stunts/stunts--options-menu.png">
 <img src="/assets/stunts/stunts--options-menu.png" width="400"/>
 </a>
-<figcaption>This is less pleasant than before. </figcaption>
+<figcaption>The code for the options menu. Less pleasant than before, but very linear.</figcaption>
 </center>
 
-I followed the flow to `loc_13134`, which is a call to `do_mrl_textres`. I renamed the function in something more meaningful for future adventurers.
+If one selects “Set graphic level”, the instruction pointer lands on `loc_13134`, which is a call to `do_mrl_textres`. I renamed the function in something more meaningful for future adventurers.
 
 The function `do_mrl_textres` has about 200 lines of code, but the core was easy to find since the repeated comparisons stick out:
 
@@ -251,6 +251,7 @@ The function `do_mrl_textres` has about 200 lines of code, but the core was easy
 <a id="graphics-menu" href="/assets/stunts/stunts--graphics-menu.png">
 <img src="/assets/stunts/stunts--graphics-menu.png" width="400"/>
 </a>
+<figcaption>The graphic options submenu.</figcaption>
 </center>
 
 So, here my first discoveries: if one of the first 5 options is chosen, the result is stored in a program global, `timertestflag2`. I relabeled this variable as `detail_level`, taking note that the best value is 0, while the worst is 4. In addition I renamed the option affected by choices 6 and 7, `timertestflag`, into `slow_video_mgmt`.
@@ -259,11 +260,11 @@ To ensure my findings were correct, and to find out the memory addresses of the 
 
 ## A tile-based graphics engine
 
-We can now look at where `detail_level` appears in the code, to find out where the rendering engine is using it. Hopefully we can then somehow alter the corresponding instructions to improve the graphic detail.
+I looked at where `detail_level` appears in the code, to find out where the rendering engine is using it. the hope was to somehow alter the instructions at that location to improve the graphic detail.
 
 A variable search in the Restunts project led me to the function `update_frame` in `frame.c`. At [this link](https://github.com/AlbertoMarnetto/restunts/blob/aa1e714a66f8f9bd0d78bb1c0c3ab6b69252721d/src/restunts/c/frame.c) you can find the original version of the function before my variable labeling, in case you want to unravel the mystery for yourself.
 
-One of the first occurencies of the detail level is at line 313. The variable is used as index in an array.
+One of the first occurrencies of the detail level is at line 313. The variable is used as index in an array.
 
 ```c
 var_130 = byte_3C09C[detail_level];
@@ -278,9 +279,9 @@ byte_3C09C     db 2
     db 0
 ```
 
-So, `var_130` will be 2 if one of the first two graphical level options are chosen, 1 if the third is chosen and 0 otherwise. A comparison with the <a href="#graphics-menu">graphic options menu</a> helps to make sense of the meaning: the value 2 corresponds the the “full” level, 1 to the “medium” and 0 to “fast”.
+So, `var_130` is 2 if one of the first two graphical level options are chosen, 1 if the third is chosen and 0 otherwise. A comparison with the <a href="#graphics-menu">graphic options menu</a> helps to make sense of the meaning: the value 2 corresponds the the “full” level, 1 to the “medium” and 0 to “fast”.
 
-So, `var_130` seems a pretty important value. Remarkably, it is only used once, so the instruction consuming it must be a key point of the algorithm. Let's examine the context, a big `for` cycle spanning lines 315–402:
+This seems a pretty important value. Remarkably, it is only used once, so the instruction consuming it must be a key point of the algorithm. Let's examine the context, a big `for` cycle spanning lines 315–402:
 
 ```c
 	for (si = 0x16; si >= 0; si--) {
@@ -294,7 +295,7 @@ So, `var_130` seems a pretty important value. Remarkably, it is only used once, 
 	}
 ```
 
-The value of `var_130` determines whether an iteration of the cycle is executed or not. There remains the problem of understanding what the loop is doing in the first place, but this is actually not a hard enigma for someone acquained with the game. Remember when I spoke about Stunts' intuitive track editor? Time to have a look at it:
+The value of `var_130` determines whether an iteration of the cycle is executed or not. There remains the problem of understanding what the loop is doing in the first place, but this is actually not a hard enigma for someone acquainted with the game. Remember when I spoke about Stunts' intuitive track editor? Time to have a look at it:
 
 <center>
 <a id="graphics-menu" href="/assets/stunts/stunts--4am.png">
@@ -412,19 +413,19 @@ Again, while the variable labeling is not perfect, the titanic work of Restunts'
 
 ## Stunts with binoculars
 
-I was satisfied with the progress of the analysis, but the results were forcing me to reconsider how much effort the modding would require. At the beginning of the project I was hoping to radically expand the field of view by changing a couple of bytes, like I did in Stunt Island, but it was clear that this time the task would be more complex. Changing the detail threshold variable to a value greater then 2 would not make more tiles appear magically, they would keep being 23 since this is what the datatable contains. So the way to go was to extend the table, but naturally that this could not be done with a simple hex-edit surgery, as changing the size of this variable implies adjusting potentially thousands of offsets in the rest of the program.
+I was satisfied with the progress of the analysis, but the results were forcing me to reconsider how much effort the modding would require. At the beginning of the project I was hoping to radically expand the field of view by changing a couple of bytes, like I did in Stunt Island, but it was clear that this time the task would be more complex. Changing the detail threshold variable to a value greater then 2 would not make more tiles appear magically, they would keep being 23 since this is what the datatable contains. So the way to go was to extend the table, but naturally this could not be done with a simple hex-edit surgery, as changing the size of this variable implies adjusting potentially thousands of offsets in the rest of the program.
 
 I accepted to dedicate more days to make this plan come true: this will be the subject of the next post. However, I was starting to long for some action and some concrete results, so I decided to produce a simpler mod, that would also serve as proof that my interpretation of the code working was correct.
 
-As I said, we cannot add more tiles with just a hex editor, but what about moving them? We could alter the coordinates of the tiles at the right and left borders of the field of vision, and move them to the front to extend the depth at the expense of the width. The result would be the equivalent of seeing the world through a binocular – maybe not “better” than the original game, but surely something different!
+As I said, we cannot add more tiles with just a hex editor, but what about shifting them around? One could alter the coordinates of the tiles at the right and left borders of the field of vision, and move them to the front to extend the depth at the expense of the width. The result would be the equivalent of seeing the world through binoculars – maybe not “better” than the original game, but surely something different!
 
-So I opened the game file with Bless, and looked for the eigth tile tables. Finding them was easy, as I could just look for their content in the `.asm` file and search for it in the editor. Changing the coordinates was conceptually easy, it just required the patience and precision of a surgeon since I had to edit eight different tables, and even one byte too much or too few would totally break the executable.
+I opened the game file with Bless and looked for the tile tables. Finding them was easy, as I could just check their content in the `.asm` file and search for the corresponding bytes in the hex editor. Changing the coordinates was conceptually easy, it just required the patience and precision of a surgeon since eight different tables needed to be edited, and even one byte too much or too few would break the executable.
 
 <center>
 <a href="/assets/stunts/stunts--bless-binoculars.png">
 <img src="/assets/stunts/stunts--bless-binoculars.png" width="500"/>
 </a>
-<figcaption>Editing the table we saw before, <code>unk_3BE9A</code>. Left: original game, right: modded.<br/>
+<figcaption>Editing the table shown before, <code>unk_3BE9A</code>. Left: original game, right: modded.<br/>
 See e.g. how the first tile was moved from <code>02 FC</code> to <code>00 FB</code>, that is from (2, -4) to (0, -5).</figcaption>
 </center>
 
@@ -437,27 +438,27 @@ Despite the late hour, I somehow managed to avoid fatal errors, and for the firs
 <a href="/assets/stunts/stunts--default-binoculars.png">
 <img src="/assets/stunts/stunts--default-binoculars.png" width="350"/>
 </a>
-<figcaption>Yes, it's not as good as TrackMania on a GeForce. But as a long-time Stunts player, seeing this scene really filled me with joy.</figcaption>
+<figcaption>Yes, it's not as good as Trackmania on a GeForce. But as a long-time Stunts player, seeing this scene really filled me with joy.</figcaption>
 </center>
 
 The result was well worth of a celebration and I was happy to share this first achievement with the Stunts community, starting a [forum thread](https://forum.stunts.hu/index.php?topic=4400.0) dedicated to the modding project.
 
-I took some time before I could put off the rose-tinted glasses and have an objective look at the picture. With cool mind, the glitches are evident: why is the windmill not there? And what are those grey blobs on the uphill road? But the mystery did not last long: I realized that, when changing the coordinated, I had not taken care of rearranging the tiles to keep them sorted by distance. So the game engine would draw the tile with the windmill, but then it would draw the tiles with the hill, overwriting the mill in the process (you can still make out the top of a blade, the only surviving pixels of the building). Finally, it would render the farthest tile containing the blocks of the slalom road, which appeared in the middle of the ramp instead of being hidden by it.
+I took some time before I could put off the rose-tinted glasses and have an objective look at the picture. With cool mind, the glitches are evident: why is the windmill not there? And what are those grey blobs on the uphill road? But the mystery did not last long: I realized that, when changing the coordinates, I had not taken care of rearranging the tiles to keep them sorted by distance. So the game engine would draw the tile with the windmill, but then it would overdraw it with the hill (you can still make out the top of a blade, the only surviving pixels of the building). Later, it would render the farthest tile containing the blocks of the slalom road, which appeared in the middle of the ramp instead of being hidden by it.
 
-Anyway, as a proof of concept the experiment was a success. The real goal was to add tiles and I wanted to move in that direction, so I decided not to invest more effort in polishing this first executable. However, I took the time to test a second change: forcing the engine to use high-polygon models for every object on the track. As we saw in the previous code snippet, the game chooses the low-polygon version under the condition `(var_FC != 0)`. I could have patched away the corresponding `if` instruction, but I found it easier to fix the value of the variable to 0.
+Anyway, as a proof of concept the experiment was a success. The end goal was to add tiles and I wanted to move in that direction, so I decided not to invest more effort in polishing this first executable. However, I took the time to test a second change: forcing the engine to use high-polygon models for every object on the track. As we saw in the previous code snippet, the game chooses the low-polygon version under the condition `(var_FC != 0)`. I could have patched away the corresponding `if` instruction, but I found it easier to fix the value of the variable to 0.
 
 <center>
 <a href="/assets/stunts/stunts--gamebino-qtcreator-ghidra-fix-detail.png">
 <img src="/assets/stunts/stunts--gamebino-qtcreator-ghidra-fix-detail.png" width="750"/>
 </a>
 <figcaption>
-1. Find the point where <code>var_FC is set</code> in the Restunts code<br/>
-2. Locate the equivalent point in Ghidra's reconstruction, and select it<br/>
+1. Find the point where <code>var_FC</code> is set in the Restunts code<br/>
+2. Locate the equivalent line in Ghidra's “Decompile” window, and select it<br/>
 3. Ghidra helpfully highlights the corresponding assembly instructions
 </figcaption>
 </center>
 
-The assignment `var_FC = var_BC[si]` loads the detail threshold of the `si`-th tile. In the machine code this is split in two instructions, since x86 CPUs cannot do arbitrary memory-to-memory copies : first they need to read the data into a register (in this case, `AL`), then write from there into the destination address. I could have fiddled with either of the two instructions; I chose the first one and changed the code to store 0 into `AL`.
+The assignment `var_FC = var_BC[si]` loads the detail threshold of the `si`-th tile. In the machine code this is split in two instructions, since x86 CPUs cannot do arbitrary memory-to-memory copies: first they need to read the data into a register (in this case, `AL`), then write from there into the destination address. I could have fiddled with either of the two instructions; I chose the first one and changed the code to store 0 into `AL`.
 
 <center>
 <a href="/assets/stunts/stunts--gamebino-ghidra-fix-detail.png">
@@ -468,20 +469,22 @@ The assignment `var_FC = var_BC[si]` loads the detail threshold of the `si`-th t
 </figcaption>
 </center>
 
-Ghidra can probably save the patched file, but I found it safer to just take note of the bytes to replace and alter the `.EXE` with an hex editor. You can check the result manually by downloading and comparing <a href="/assets/stunts/game.exe">the original game</a> and <a href="/assets/stunts/gamebino.exe">the patched copy</a>:
+Ghidra can probably save the patched file, but I found it safer to just take note of the bytes to replace and alter the `.EXE` with a hex editor. You can check the result manually by downloading and comparing <a href="/assets/stunts/game.exe">the original game</a> and <a href="/assets/stunts/gamebino.exe">the patched copy</a>:
 
 <center>
 <a href="/assets/stunts/stunts--gamebino-meld-fix-detail.png">
 <img src="/assets/stunts/stunts--gamebino-meld-fix-detail.png" width="550"/>
 </a>
 <figcaption>
-With Linux and the proper tooling, this is as easy as writing <code>meld <( hexdump -C game.exe ) <( hexdump -C gamebino.exe )</code>. On Windows, Beyond Compare should be a suitable utility for the task.
+With Linux and the proper tooling, this is as easy as writing<br/>
+<code>meld <( hexdump -C game.exe ) <( hexdump -C gamebino.exe )</code>.<br/>
+On Windows, Beyond Compare should be a suitable utility for the task.
 </figcaption>
 </center>
 
 ## End of part I
 
-After this last adjustment, I took the time to play around with the mod. The result was not what I would call “improvement”, but it had some novelty value. 
+After the last adjustment, I took the time to play around with the mod. The result was not what I would call “improvement”, but it had some novelty value. 
 
 <center>
 <video controls width="640">
@@ -491,21 +494,21 @@ After this last adjustment, I took the time to play around with the mod. The res
 <figcaption>The binoculars experience. I spare you the engine sounds – be grateful for that.</figcaption>
 </center>
 
-Omitting to sort the tiles by distance creates all sort of Z-ordering errors. The clipping issues are illustrated by the clipper (<em>nomen omen</em>) at 00:37, and by other track objects throughout the replay. Moreover, the extra vision distance is only effective when looking in the four cardinal directions: no extra range is obtained when the car points diagonally with respect to the North-South axis. On the other hand, the game runs without problems, and the windmill is always rendered using the high-definition model.
+Failing to sort the tiles by distance creates all sort of Z-ordering errors. The clipping issues are illustrated by the clipper (<em>nomen omen</em>) at 00:37, and by other track objects throughout the replay. Moreover, the extra vision distance is only effective when looking in the four cardinal directions: no extra range is obtained when the car points diagonally with respect to the North-South axis. On the other hand, the game runs without problems, and the windmill is always rendered using the high-definition model.
 
-In overall, the mod showed that my understanding of the rendering mechanisms was correct, which was vital for me to plan more advanced manipulations. It was time to call it a day, and the same is true for this writeup. See you soon for part II!
+In overall, the prototype showed that my understanding of the rendering mechanisms was correct, which was vital for me to plan the next phase of the modding. But it was time to call it a day, and the same is true for this writeup. See you soon for part II!
 
 
 ## Appendix: setting a breakpoint in the graphic options menu
 <a id="appendix"/>
 
-Here is how I finally managed to locate where in DOSBox debug the menu code is loaded. My plan to find out was the following:
+Here is how I managed to locate where in DOSBox debug the menu code is loaded. My plan to find out was the following:
 
 1. Locate the code in Ghidra and note its address (`x`).
 2. Determine the offset between DOS and Ghidra address (`y`).
 3. Calculate `x-y` and set a breakpoint there
 
-Point 1 was, surprisingly, the most complex. Ghidra does not allow to search for assembly instructions, so I needed to get the corresponding machine code. Also, anything with symbolic names was out of the question, since the symbols are different between Ghidra and the assembly. Anyway, the task seemed not hard, since the instruction `cmp ax, 9` is rare enough to only appear a handful of times in the executable. There was still a small trap when grepping the string: I needed to redirect the result to a file and then `cat` it; skipping this step and displaying the results of `grep` directly on the screen resulted in just whitespace, because the console is confused by the `crlf` line endings.
+Point 1 was, surprisingly, the hardest part. Ghidra does not allow to search for assembly instructions, so I needed to get the corresponding machine code. Also, anything with symbolic names was out of the question, since the symbols are different between Ghidra and the assembly. Anyway, the task seemed simple, since the menu code contains the instruction `cmp ax, 9` which seemed special enough. To check its uniqueness, I grepped for it in the codebase. There was still a small trap: I needed to redirect the result of `grep` to a file and then `cat` it; skipping this step and displaying the results of `grep` directly on the screen resulted in just whitespace, because the console is confused by the `crlf` line endings.
 
 ```sh
 src/restunts/asmorig$ grep --line-number -P 'cmp(\s)*ax,(\s)*9[[:space:]]' *asm > /tmp/matches
@@ -515,7 +518,7 @@ seg008.asm:4621:    cmp     ax, 9
 seg008.asm:5358:    cmp     ax, 9
 ```
 
-Then I needed to find the machine code corresponding to this. An easy thing, no? Just put the instruction in an assembler and read the result. There is a very convenient [online assembler](https://shell-storm.org/online/Online-Assembler-and-Disassembler/), made by Jonathan Salwan, that supports 16-bit x86. It informed me that the `cmp` instruction translates to `83 F8 09`. I searched for the sequence in Ghidra and, astonishingly, it did not appear! I tried in vain other search parameters, but nothing came to light. How was this possible? The solution appeared when I asked a second opinion to the most energy-inefficient assembler of the planet:
+Three hits, few enough. Then I needed to find corresponding the machine code. An easy thing, no? Just put the instruction in an assembler and read the result. There is a very convenient [online assembler](https://shell-storm.org/online/Online-Assembler-and-Disassembler/), made by Jonathan Salwan, which supports 16-bit x86. It informed me that the `cmp` instruction translates to `83 F8 09`. I searched for the sequence in Ghidra and, astonishingly, it did not appear! I tried in vain other search parameters, but nothing came to light. How was this possible? The solution was revealed when I asked a second opinion to the most energy-inefficient assembler of the planet:
 
 <center>
 <a href="/assets/stunts/stunts--chatgpt-disassembly.png">
@@ -538,13 +541,13 @@ Recapitulating:
 * The code for the menu appears in Ghidra at `274B:2BE8`
 * Ghidra's `274B` segment maps to DOSBox's `18F0`
 
-To stop the game in the menu, I set a breakpoint at `18F0:2BE8`. Everything went according to the plan.
+To stop the game in the menu, I set a breakpoint at `18F0:2BE8`. Mission complete: The breakpoint was hit as soon as I selected an option.
 
 <center>
 <a href="/assets/stunts/stunts--dosbox-menu.png">
 <img src="/assets/stunts/stunts--dosbox-menu.png" width="600"/>
 </a>
-<figcaption>The breakpoint was hit as soon as I selected an option. <code>AX</code> holds 1, consistent with me choosing the second option from the top.</figcaption>
+<figcaption>At the breakpoint, the register <code>AX</code> holds 1, consistent with me choosing the second option from the top.</figcaption>
 </center>
 
 The data segment register is set at `2D1C`, so the instruction at `2BED` copies the detail level into `2D1C:018A`, and all the other variables in the data segment are now easy to find. Granted, I could have spared the effort by noticing that the data segment pointer never changes (the `MODEL MEDIUM` in the assembly ensures that), but it was a good learning exercise.
