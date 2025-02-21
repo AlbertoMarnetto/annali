@@ -1,5 +1,5 @@
 ---
-title:
+title: "SuperSight: a graphical enhancement mod for Brøderbund's Stunts"
 layout: default
 ---
 
@@ -18,7 +18,9 @@ html {
 	height: 480px;
 	border: 2px solid white;
 	margin-bottom: 1em;
+	max-width: 100%;
 }
+
 .img {
 	position: absolute;
 	top: 0;

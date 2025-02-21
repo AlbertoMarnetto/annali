@@ -90,6 +90,7 @@ h2 {
 
 img {
 	border: 1px solid #ddd;
+	max-width: 100%;
 }
 
 p {
@@ -113,9 +114,12 @@ pre {
 	background-color: #333;
 	white-space: pre;
 	font-size: 80%;
+	max-width: 100%;
+	overflow-x: auto;
 }
 
 video {
 	border: 1px solid #ddd;
+	max-width: 100%;
 }
 
