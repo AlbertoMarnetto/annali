@@ -7,7 +7,7 @@ layout: default
 
 This page contains my mods of Stunts (aka 4D Sports Driving). Their source code is available in [my Restunts repository](https://github.com/AlbertoMarnetto/restunts).
 
-Note that all mods require a copy of the original game. This was declared freeware by the original developers, and can be obtained in the [download section](https://wiki.stunts.hu/wiki/Download) of the Stunts Wiki.
+Note that most of the download links provide only the game executable; to run them one needs the full game. This was declared freeware by the original developers, and can be obtained in the [download section](https://wiki.stunts.hu/wiki/Download) of the Stunts Wiki.
 
 ---
 
@@ -18,7 +18,8 @@ A mod increasing the field of view to a radius of up to 10 tiles around the car 
 * F6 turns on/off the visibility of [illusion tiles](https://wiki.stunts.hu/wiki/Illusion_track)
 
 **Download:**
-* <b>[SuperSight v1.5](/assets/stunts/RESTUNTS-10a1e10.EXE)</b> (2025-02-11)
+* <b>[SuperSight v1.5 – exe only](/assets/stunts/RESTUNTS-10a1e10.EXE)</b> (2025-02-11)
+* <b>[SuperSight v1.5 – full game](/assets/stunts/restunts-complete.7z)</b> (2025-02-11)
 
 **Making of:**
 * [**Part I**](/2025/02/20/broderbund-stunts-1.html) : general introduction and the making of “Stunts with binoculars”
@@ -47,7 +48,7 @@ This mod, precursor of SuperSight, allows a slightly longer line of sight by sac
 
 ## Restunts
 
-A compiled copy of [Restunts](https://wiki.stunts.hu/wiki/Restunts), a project aiming the rewrite Stunts in C language. My copy has some fixes with respect to the [current Restunts master](https://bitbucket.org/dreadnaut/restunts/src/master/):
+A compiled copy of [Restunts](https://wiki.stunts.hu/wiki/Restunts), a project aiming the rewrite Stunts in C language. My copy has some fixes with respect to the [current Restunts master](https://github.com/4d-stunts/restunts):
 
 * the audio options work, e.g. use `/ssb` for Sound Blaster audio. By copying the appropriate driver files one can also select MT32 (`/smt`) or other supported cards
 * the replays are processed correctly, without desyncing
