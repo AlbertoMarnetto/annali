@@ -5,7 +5,7 @@ layout: default
 
 # Stunts
 
-This page contains my mods of Stunts (aka 4D Sports Driving). Their source code is available in [my Restunts repository](https://github.com/AlbertoMarnetto/restunts).
+This page contains selected mods of Stunts (aka 4D Sports Driving), made by me and other fans. 
 
 Note that most of the download links provide only the game executable; to run them one needs the full game. This was declared freeware by the original developers, and can be obtained in the [download section](https://wiki.stunts.hu/wiki/Download) of the Stunts Wiki.
 
@@ -34,6 +34,9 @@ A mod increasing the field of view to a radius of up to 10 tiles around the car 
   <!-- ffmpeg -i *.mkv(om[1]) -vf "crop=639:399:0:0" -c:a mp3 stunts--282ARG-3.mp4 -->
 </video>
 
+**Source code**
+The source code is available in [my Restunts repository](https://github.com/AlbertoMarnetto/restunts/tree/supersight).
+
 ---
 
 ## Stunts with binoculars
@@ -44,27 +47,46 @@ This mod, precursor of SuperSight, allows a slightly longer line of sight by sac
 
 * [Stunts with binoculars](/assets/stunts/gamebino.exe)
 
----
-
-## Restunts
-
-A compiled copy of [Restunts](https://wiki.stunts.hu/wiki/Restunts), a project aiming the rewrite Stunts in C language. My copy has some fixes with respect to the [current Restunts master](https://github.com/4d-stunts/restunts):
-
-* the audio options work, e.g. use `/ssb` for Sound Blaster audio. By copying the appropriate driver files one can also select MT32 (`/smt`) or other supported cards
-* the replays are processed correctly, without desyncing
-
-**Download:**
-
-* <b>[Restunts](/assets/stunts/RESTUNTS-ab5cfab.EXE)</b>
-
 
 ---
 
-## Vanilla Stunts
+## Ferrari Edition
 
-This the original game, as provided by the Restunts project. It differs from the commercial editions in that it removes the multi-stage loading and the copy protection. 
+The name says it all. Custom cars featuring the best creations coming from Maranello, and thematic game screens. 
 
-**Download:**
+Made by Daniel3D with some help from Cas.
 
-* <b>[Stunts](/assets/stunts/game.exe)</b>
+**Download**
+* [Stunts Ferrari Edition](/assets/stunts/StuntsFerrari.zip)
+
+**More infos**
+* [Wikipage](https://wiki.stunts.hu/wiki/Stunts_Ferrari_Edition)
+* [Forum](https://forum.stunts.hu/index.php?topic=3762.0)
+
+---
+
+## DAF Museum Edition
+
+The only copy of Stunts officially supported by a cultural institution. Created by Overdrijf in year 2023 for a special exhibition of the [DAF Museum](https://nl.wikipedia.org/wiki/DAF_Museum), features the beautiful concept car [DAF Siluro](https://en.wikipedia.org/wiki/DAF_Siluro) designed by Giovanni Michelotti.
+
+**Download**
+* [Stunts DAF Museum Edition](/assets/stunts/DAF.zip)
+
+**More infos**
+* [Wikipage](https://wiki.stunts.hu/wiki/Stunts_DAF_Museum_Edition)
+* [Forum](https://forum.stunts.hu/index.php?topic=4152)
+* [Documentary](https://www.youtube.com/watch?v=9ZtF0ZCPCI4)
+
+---
+
+## Selected resources and links
+<a id="resources"/>
+* <b>[stunts.hu](https://stunts.hu)</b>: the unofficial home of Stunts' community, hosting the most important tournaments as well as a rich forum and wiki.
+* Duplode's <b>[Southern Cross site](https://scr.stunts.hu/index.html)</b>: a wide selection of mods, tools and custom cars.
+* Erik Barros' <b>[Megapack](https://erikbarros.cloudns.be/files/megapack_beta.zip)</b> featuring [213 cars](/assets/stunts/carlist.xls) by various authors.
+* <b>[Ryoma's Cars](https://mega.nz/folder/1mJEwDCC#4k1vV5V8T_xgxcNidXV31w)</b>: more than 140 vehicles aiming for maximum accuracy to their real-life counterparts.
+* <b>[Cas' repo](http://casrepo.org/)</b>: utilities for Stunts.
+* <b>[MarkCeccato.com](https://www.markceccato.com/)</b>: custom cars, a Windows installer and other content.
+* Youtube: <b>[community channel](https://www.youtube.com/@stunts-retrogame/videos)</b>, <b>[Alan Rotoi](https://www.youtube.com/@alanrotoi)</b>, <b>[Duplode](https://www.youtube.com/@Dpld)</b>
+* <b>[kalpen.de](http://stunts.kalpen.de/stunts.htm)</b>: the oldest running Stunts site, to enjoy a taste of the Internet of the Nineties
 

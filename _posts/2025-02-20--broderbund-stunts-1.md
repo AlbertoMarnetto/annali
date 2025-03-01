@@ -141,7 +141,7 @@ Stunts (also known as 4D Sports Racing) is a racing game where the player contro
 
 The fantastic editor is probably the reason why, even if it never attained cult status, Stunts still has a small but extremely active community. New content is continuously being created, as the track designers make use of 35 years of experience to enable incredible acrobatics, while other fans build new cars, aiming for maximum realism or for creative exploration of the possibilities offered by the game engine.
 
-If you want to explore Stunts's world, I'll include some further game-related resources in the appendix to this series. As a starter, I find it appropriate to link [kalpen.de](http://stunts.kalpen.de/allabout.htm), a site coming straight from the Web 1.0 era. 
+If you want to explore Stunts's world, I have included useful liks in my [resources section](/projects/stunts.html#resources).
 
 In this video you can see the game in the hands of a world-class expert.
 
