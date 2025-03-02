@@ -103,7 +103,7 @@ html {
 
 <p class="dim" style="font-size:90%;">Clickbait disclaimer: Stunts was actually created by Distinctive Software; Brøderbund was only the publisher. But <a href="https://www.youtube.com/watch?v=92h69Gh8TFQ">nobody heard about Distinctive</a>, and I wanted to be sure this article does not get confused with <a href="/2024/11/20/tweaking-stunt-island.html">the one</a> about Disney's Stunt Island. Sorry about that.</p>
 
-This is the first part of a series about the creation of SuperSight, a mod for Stunts intended to bring the game's 3D engine into a new era (let's say, 1992 instead of 1990).  You can read the articles to learn some reverse engineering techniques and enjoy my rants, but feel free to jump instead to the [**download**](projects/stunts.html) page and start playing the game immediately. Also, if you like it, consider joining [the community](http://stunts.hu/) – racing is more fun in company.
+This is the first part of a series about the creation of SuperSight, a mod for Stunts intended to bring the game's 3D engine into a new era (let's say, 1992 instead of 1990).  You can read the articles to learn some reverse engineering techniques and enjoy my rants, but feel free to jump instead to the [**download**](/projects/stunts.html) page and start playing the game immediately. Also, if you like it, consider joining [the community](http://stunts.hu/) – racing is more fun in company.
 
 Here is how the game looks like, with and without the patch.
 

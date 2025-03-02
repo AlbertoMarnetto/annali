@@ -8,9 +8,9 @@ layout: index-layout
 * E-mail: [alberto.m.dev@gmail.com](mailto:alberto.m.dev@gmail.com)
 * Linkedin: [linkedin.com/in/a-marnetto](https://linkedin.com/in/a-marnetto)
 * Github: [github.com/AlbertoMarnetto/](https://github.com/AlbertoMarnetto/)
-* [Résumé](assets/index/cv-alberto-marnetto.pdf)
+* [Résumé](/assets/index/cv-alberto-marnetto.pdf)
 
-## Posts ([RSS](assets/index/rss.xml))
+## Posts ([RSS](/assets/index/rss.xml))
 
 <style type="text/css" rel="stylesheet">
 html
@@ -21,7 +21,7 @@ html
 }
 </style>
 
- <!--<span style="display: flex;"> <span style="flex: 0 0 7em;">2025-02-09 :</span> [Enhancing Brøderbund's Stunts for modern 386 systems (part 2)](2025/02/15/broderbund-stunts-2.html) </span> -->
+ <!--<span style="display: flex;"> <span style="flex: 0 0 7em;">2025-02-09 :</span> [Enhancing Brøderbund's Stunts for modern 386 systems (part 2)](/2025/02/15/broderbund-stunts-2.html) </span> -->
  <span style="display: flex;"> <span style="flex: 0 0 7em;">2025-02-20 :</span> [SuperSight: a graphical enhancement mod for Brøderbund’s Stunts (part 1)](/2025/02/20/broderbund-stunts-1.html) </span>
  <span style="display: flex;"> <span style="flex: 0 0 7em;">2025-02-09 :</span> [How to ruin your site reputation in two easy steps (part 2)](/2025/02/09/ruining-ranking-part-2.html) </span>
  <span style="display: flex;"> <span style="flex: 0 0 7em;">2025-02-06 :</span> [How to ruin your site reputation in two easy steps (part 1)](/2025/02/06/ruining-ranking-part-1.html) </span>
